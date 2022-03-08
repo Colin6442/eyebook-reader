@@ -1,1 +1,1 @@
-# eyebook-reader
+# EyeRead
