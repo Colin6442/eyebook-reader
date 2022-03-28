@@ -30,7 +30,7 @@ function PlotGaze(GazeData) {
         }
     }
 
-    //////set callbacks/////////
+    //set callbacks
     window.addEventListener("load", function() {
         GazeCloudAPI.OnCalibrationComplete =function(){ console.log('gaze Calibration Complete')  }
         GazeCloudAPI.OnCamDenied =  function(){ console.log('camera  access denied')  }
