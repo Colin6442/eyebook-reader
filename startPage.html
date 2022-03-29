@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <link rel="stylesheet" href="startPage.CSS">
+    <title>EyeReader</title>
+   
+</head>
+
+
+
+
+<body id = "myBody">
+
+    <h1> Welcome to Lazy Eye<sup>TM</sup> <br> or Something</h1>
+
+
+
+
+    
+
+<input type="file" id="real-button" hidden="hidden" />
+ <button type="button" id="custom-button">Import PDF</button> 
+ <br>
+ <span id="custom-text">No PDF chosen, yet</span>
+ <br>
+ <input type="submit">
+
+<script type="text/javascript">
+    
+    const realBtn = document.getElementById("real-button")
+    const customBtn = document.getElementById("custom-button");
+    const customTxt = document.getElementById("custom-text");
+
+    customBtn.addEventListener("click", function() {
+        realBtn.click();
+    });
+
+    realBtn.addEventListener("change", function(){
+        if(realBtn.value){
+            customTxt.innerHTML = realBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+        }
+        else
+            customTxt.innerHTML = "No PDF chosen, yet";
+    })
+
+</script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
