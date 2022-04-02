@@ -1,5 +1,5 @@
 // Set to true if you want to save the data even if you reload the page.
-window.saveDataAcrossSessions = false;
+window.saveDataAcrossSessions = true;
 //addMouseEventListeners and removeMouseEventListeners
 const collisionSVG = "collisionSVG";
 var force = [];
