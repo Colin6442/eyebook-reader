@@ -1,86 +1,22 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
 <html>
    <head>
-      <title>GazeCloudAPI</title>
-
-
-
- <script src="https://api.gazerecorder.com/GazeCloudAPI.js" ></script>
-
-
-      <style type="text/css">
-         body {
-         overflow: hidden;
-         }
-      </style>
-      <script type = "text/javascript" >
-
-            
-         function PlotGaze(GazeData) {
-
-/*
-	GazeData.state // 0: valid gaze data; -1 : face tracking lost, 1 : gaze uncalibrated
-	GazeData.docX // gaze x in document coordinates
-	GazeData.docY // gaze y in document cordinates
-	GazeData.time // timestamp
-*/
-
-         
-             document.getElementById("GazeData").innerHTML = "GazeX: " + GazeData.GazeX + " GazeY: " + GazeData.GazeY;
-             document.getElementById("HeadPhoseData").innerHTML = " HeadX: " + GazeData.HeadX + " HeadY: " + GazeData.HeadY + " HeadZ: " + GazeData.HeadZ;
-             document.getElementById("HeadRotData").innerHTML = " Yaw: " + GazeData.HeadYaw + " Pitch: " + GazeData.HeadPitch + " Roll: " + GazeData.HeadRoll;
-         
-
-         var x = GazeData.docX;
-         var y = GazeData.docY;
-         
-         var gaze = document.getElementById("gaze");
-         x -= gaze .clientWidth/2;
-         y -= gaze .clientHeight/2;
-         
-         
-
-	gaze.style.left = x + "px";
-	gaze.style.top = y + "px";
-
-         
-         if(GazeData.state != 0)
-         {
-         	if( gaze.style.display  == 'block')
-         	gaze  .style.display = 'none';
-         }
-         else
-         {
-         	if( gaze.style.display  == 'none')
-         	gaze  .style.display = 'block';
-         }
-         
-         }
-         
-         //////set callbacks/////////
-   window.addEventListener("load", function() {
-
-         GazeCloudAPI.OnCalibrationComplete =function(){ console.log('gaze Calibration Complete')  }
-         GazeCloudAPI.OnCamDenied =  function(){ console.log('camera  access denied')  }
-         GazeCloudAPI.OnError =  function(msg){ console.log('err: ' + msg)  }
-         GazeCloudAPI.UseClickRecalibration = true;
-      	 GazeCloudAPI.OnResult = PlotGaze; 
-          });
-     
-      </script>
+      <title>EyeBook Reading Page</title>
+      <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- Eyetracking Stuff -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script>  <!-- Camera Stuff -->
+      <script src="./webgazer.js"></script>     <!-- Eyetracking Stuff -->
+      <script src="./traking.js"></script>   <!-- Tracker Display -->
+      <link rel="stylesheet" type="text/css" href="readingPage.css">
    </head>
-   <body >
-      <h1>GazeCloudAPI integration example</h1>
-      <button  type="button" onclick="GazeCloudAPI.StartEyeTracking();">Start</button>
-      <button  type="button" onclick="GazeCloudAPI.StopEyeTracking();">Stop</button>
-      <div >
-         <p >  
-            Real-Time Result:
-         <p id = "GazeData" > </p>
-         <p id = "HeadPhoseData" > </p>
-         <p id = "HeadRotData" > </p>
-         </p>
-      </div>
-      <div id ="gaze" style ='position: absolute;display:none;width: 100px;height: 100px;border-radius: 50%;border: solid 2px  rgba(255, 255,255, .2);	box-shadow: 0 0 100px 3px rgba(125, 125,125, .5);	pointer-events: none;	z-index: 999999'></div>
-      ;  
+
+   <body>
+      <h1>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit est eu purus posuere, eu tempus lacus condimentum. Etiam sed purus ultrices, viverra dui et, venenatis felis. Curabitur nec fringilla urna. Ut nec posuere nunc. Nulla tristique nisl consectetur, varius diam vitae, vulputate leo. Quisque sed eleifend neque, eget lacinia nulla. Nunc sit amet ultricies nibh. In hac habitasse platea dictumst.
+         Nulla facilisi. Mauris auctor purus vitae tellus venenatis suscipit. Praesent lobortis nibh vel maximus molestie. Nullam dapibus dolor lacus, vitae imperdiet neque sodales ut. Proin lectus mauris, pellentesque quis lacus quis, laoreet feugiat erat. Phasellus condimentum rutrum fermentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean urna purus, ornare nec eros sit amet, pellentesque fermentum risus. In porta mauris id pulvinar cursus. Nullam eleifend, magna ut tincidunt fermentum, arcu lectus maximus lacus, eu tristique dui nulla ac dui. Quisque sodales consectetur commodo.
+         Fusce mi turpis, accumsan eget nisi eget, auctor sagittis orci. Nullam ut diam at neque euismod pretium vitae vitae turpis. Vestibulum vestibulum metus eu sem mollis condimentum. Fusce dapibus pellentesque justo eu viverra. Pellentesque volutpat neque eget tellus ornare fringilla. Integer ultricies lacus in nunc fermentum, vitae pretium ligula elementum. Donec ullamcorper felis in laoreet ultricies. Proin eros purus, pellentesque at gravida vitae, lobortis vitae arcu. Vivamus facilisis facilisis est, in elementum nunc congue at. Duis consectetur dui mi, vel aliquet eros interdum eget. Nunc quis lorem risus. Vivamus sem urna, semper id velit ut, eleifend efficitur sem. Aenean vehicula convallis sodales. Cras vitae nisl eu ex tristique fermentum. Maecenas lectus enim, dapibus nec congue ac, commodo vitae nisl.
+         Pellentesque consequat auctor rhoncus. Phasellus eget felis elit. Nunc rutrum dolor vel ligula semper, ut ultricies purus pulvinar. Sed et erat iaculis, ultricies leo sed, sagittis tellus. Cras rutrum magna accumsan lectus imperdiet maximus. Morbi fringilla, diam a varius volutpat, leo lacus iaculis orci, id placerat tellus libero ornare turpis. Ut nec nisl vel dolor vulputate pulvinar sit amet nec nisl. Maecenas ipsum odio, venenatis eu pulvinar blandit, lacinia sit amet lectus. Nam a rhoncus turpis.
+         Sed sagittis velit in tristique pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam eget sem ac sem maximus fermentum. Nullam varius ligula vitae enim malesuada dapibus. Curabitur pharetra risus sed mauris pretium, id condimentum augue maximus. Mauris euismod leo eget turpis rutrum molestie. Fusce ultricies dapibus felis, vel mattis arcu aliquam vitae. Pellentesque non massa fringilla, varius purus id, consequat sapien.</h1>
    </body>
+
 </html>
