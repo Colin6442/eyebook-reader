@@ -1,5 +1,6 @@
 body {
     overflow: hidden;
+    background-color: white;
 }
 
 .pointer{
@@ -13,4 +14,45 @@ body {
     background-color: aqua;
 	pointer-events: none;
 	z-index: 999999;
+}
+
+.allText{
+    background-color: rgba(0, 0, 0, 0.233);
+    width: 90vw;
+    height: 20vh;
+    margin-top: 25vh;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.startText{
+    padding-top: 2px;
+    margin: auto;
+    text-align: center;
+    width: 45vw;
+    height: 20vh;
+}
+
+.calibrationBtn{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: 3px solid black;
+    border-radius: 50%;
+}
+.calibrationBtn:hover{
+    background-color: rgb(255, 138, 138);
+}
+
+.startBtn{
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    border: 3px solid black;
+    margin-top: 50px;
+    margin-left: 45vw;
+}
+
+.startBtn:hover{
+    background-color: rgb(255, 126, 126);
 }

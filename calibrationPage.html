@@ -2,9 +2,23 @@
 <meta charset="utf-8">
 <html>
   <head>
-    
+    <title>EyeBook Calibration Page</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- Eyetracking Stuff -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script>  <!-- Camera Stuff -->
+    <script src="./webgazer.js"></script>     <!-- Eyetracking Stuff -->
+    <script src="./calibrationPage.js"></script>
+    <link rel="stylesheet" type="text/css" href="readingPage.css">
   </head>
-  <body>
-
-  </body>
+  <body style= "margin:0">
+    <div class="allText">
+      <button style="margin-top: 7vh; margin-left: 7vw;", class="calibrationBtn"></button>
+      <button style="margin-top: 7vh; margin-left: 69vw;", class="calibrationBtn"></button>
+      <div style="margin-top: -13vh;", class="startText">
+        <h1>In order for the eye tracking to work it must first be calibrated</h1>
+        <h2>Make sure you are in a well lit environment. Once calibration starts you will need to look 
+            at the red circle and click on it. There will be a total of about 20 calibration circles you will need to click</h2>
+      </div>
+    </div>
+      <button class="startBtn" onclick="beginCalibration()">Start Calibration</button>
+    </body>
 </html>
