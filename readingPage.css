@@ -3,21 +3,8 @@ body {
     background-color: white;
 }
 
-.pointer{
-    position: absolute;
-    display:none;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: solid 2px  rgba(255, 255,255, .2);
-	box-shadow: 0 0 100px 3px rgba(125, 125,125, .5);
-    background-color: aqua;
-	pointer-events: none;
-	z-index: 999999;
-}
-
 .allText{
-    background-color: rgba(0, 0, 0, 0.233);
+    background-color: rgba(59, 243, 191, .5);
     width: 90vw;
     height: 20vh;
     margin-top: 25vh;
@@ -26,9 +13,19 @@ body {
 }
 
 .startText{
-    padding-top: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
     margin: auto;
-    text-align: center;
+    text-align: left;
+    width: 45vw;
+    height: 20vh;
+}
+
+.calibratedText{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin: auto;
+    text-align: left;
     width: 45vw;
     height: 20vh;
 }
@@ -44,15 +41,32 @@ body {
     background-color: rgb(255, 138, 138);
 }
 
-.startBtn{
+.menuBtn{
     width: 200px;
     height: 50px;
-    background-color: red;
+    background-color: rgb(59, 243, 191);
     border: 3px solid black;
-    margin-top: 50px;
-    margin-left: 45vw;
+    margin-top: 25px;
+    margin-left: calc(50vw - 100px);
 }
 
-.startBtn:hover{
+.menuBtn:hover{
     background-color: rgb(255, 126, 126);
+}
+
+.calibrated{
+    display: none;
+    background-color: rgba(59, 243, 191, 0.3);
+    width: 60vw;
+    height: 14vh;
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.allMenuBtns{
+    width: 100vw;
+    height: 20vh;
+    margin-left: auto;
+    margin-right: auto;   
 }

@@ -1,8 +1,10 @@
-// window.saveDataAcrossSessions = true;
-// localforage.clear();
+window.saveDataAcrossSessions = true;
+
+window.onload = async function() {
+	isCalibrated();
+}
 
 var beginCalibration = async function() {
-
     const webgazerInstance = await webgazer.setRegression('weightedRidge') /* currently must set regression and tracker */
         .setTracker('TFFacemesh')
         .begin();
@@ -11,15 +13,13 @@ var beginCalibration = async function() {
         .applyKalmanFilter(true); // Kalman Filter defaults to on.
         // Add the SVG component on the top of everything.
     webgazer.setGazeListener(eyeListener);
-    };
+};
 
-    window.onbeforeunload = function() {
-        webgazer.end();
+window.onbeforeunload = function() {
+	webgazer.end();
 }
 
 var webgazerCanvas = null;
-
-// var previewWidth = webgazer.params.videoViewerWidth;
 
 var eyeListener = async function(data, clock) {
   if(!data)
@@ -27,6 +27,22 @@ var eyeListener = async function(data, clock) {
   if (!webgazerCanvas) {
     webgazerCanvas = webgazer.getVideoElementCanvas();
   }
-  console.log(data.x + " - " + data.y)
+//   console.log(data.x + " - " + data.y)
   
+}
+
+function isCalibrated(){
+	var out = localforage.getItem("webgazerGlobalData").then(data => {
+	if(data != null){
+		console.log("Has data");
+		document.getElementById("calibratedText").style.display = "block";
+	}else{
+		console.log("No data");
+	}
+	});
+}
+
+function resetCalibration(){
+    localforage.clear();
+	location.reload();
 }
