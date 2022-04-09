@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
+
+
+
 <head>
-    <link rel="stylesheet" href="/static/css/startPage.css">
+    <link rel="stylesheet" href="startPage.CSS">
     <title>EyeReader</title>
    
 </head>
+
+
+
 
 <body id = "myBody">
 
     <h1> Welcome to Lazy Eye<sup>TM</sup> <br> or Something</h1>
 
-<input type="file" id="real-button" hidden="hidden" />
+
+
+
+    
+
+<input type="file" id="real-button" hidden="hidden" accept=".pdf"/>
  <button type="button" id="custom-button">Import PDF</button> 
  <br>
  <span id="custom-text">No PDF chosen, yet</span>
  <br>
- <input type="submit">
+ <input type="submit" id="real-submit" onclick="document.location='readingPage.html'">
 
 <script type="text/javascript">
     
@@ -34,17 +45,10 @@
         else
             customTxt.innerHTML = "No PDF chosen, yet";
     })
+
 </script>
+
 </body>
-
-
-
-
-
-
-
-
-
 
 </html>
 
