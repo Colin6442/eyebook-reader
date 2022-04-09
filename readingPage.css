@@ -1,24 +1,28 @@
 body {
+    margin: 0;
     overflow: hidden;
     background-color: white;
 }
 
 .allText{
-    background-color: rgba(59, 243, 191, .5);
+    background-color: rgba(25, 118, 92, 0.5);
     width: 90vw;
     height: 20vh;
-    margin-top: 25vh;
+    top: 25vh;
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto;
+    border-radius: 20px;  
 }
 
 .startText{
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin: auto;
+    margin-top: -14vh;
     text-align: left;
     width: 45vw;
-    height: 20vh;
+    height: calc(18vh + 10px);
 }
 
 .calibratedText{
@@ -27,7 +31,7 @@ body {
     margin: auto;
     text-align: left;
     width: 45vw;
-    height: 20vh;
+    height: 12vh;
 }
 
 .calibrationBtn{
@@ -41,7 +45,14 @@ body {
     background-color: rgb(255, 138, 138);
 }
 
+.menu{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 255, 251, 0.25);
+}
+
 .menuBtn{
+    display: none;
     width: 200px;
     height: 50px;
     background-color: rgb(59, 243, 191);
@@ -56,12 +67,13 @@ body {
 
 .calibrated{
     display: none;
-    background-color: rgba(59, 243, 191, 0.3);
+    background-color: rgba(25, 118, 92, 0.5);
     width: 60vw;
     height: 14vh;
     margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 20px;
 }
 
 .allMenuBtns{
@@ -69,4 +81,11 @@ body {
     height: 20vh;
     margin-left: auto;
     margin-right: auto;   
+}
+
+.calibration{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(59, 243, 191, .5);
 }

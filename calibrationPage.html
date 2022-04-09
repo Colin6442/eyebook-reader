@@ -9,30 +9,35 @@
     <script src="./calibrationPage.js"></script>
     <link rel="stylesheet" type="text/css" href="readingPage.css">
   </head>
-  <body style= "margin:0">
-    <div class="allText">
-      <button style="margin-top: 7vh; margin-left: 7vw;", class="calibrationBtn"></button>
-      <button style="margin-top: 7vh; margin-left: 69vw;", class="calibrationBtn"></button>
-      <div style="margin-top: -13vh;", class="startText">
-        <h1>In order for the eye tracking to work it must first be calibrated</h1>
-        <h2>Make sure you are in a well lit environment. Once calibration starts you will need to look 
-            at the red circle and click on it. There will be a total of ~20 calibration circles you will 
-            need to click while looking at them.</h2>
+  <body>
+    <div id="menu", class="menu">
+      <div style="height:20vh"></div>
+      <div class="allText">
+        <button style="margin-top: 7vh; margin-left: 7vw;", class="calibrationBtn"></button>
+        <button style="margin-top: 7vh; margin-left: 69vw;", class="calibrationBtn"></button>
+        <div class="startText">
+          <h1>In order for the eye tracking to work it must first be calibrated</h1>
+          <h2>Make sure you are in a well lit environment. Once calibration starts you will need to look 
+              at the red circle and click on it. There will be a total of ~20 calibration circles you will 
+              need to click while looking at them.</h2>
+        </div>
+      </div>
+      <div id="calibratedText", class="calibrated">
+        <div class="calibratedText">
+          <h2>We have detected that you have completed calibration before. Please click the "Check" button to see if
+              the eye tracking is still suitable. If so then click continue, if not then click the "Reset" button to redo
+              the calibration.</h2>
+        </div>
+      </div>
+      <div class="allMenuBtns">
+        <button id="checkBtn", class="menuBtn" onclick="checkCalibration()">Check</button>
+        <button id="calBtn", class="menuBtn" onclick="beginCalibration()">Start Calibration</button>
+        <button id="contBtn", class="menuBtn" onclick="finishCalibration()">Continue</button>
+        <button id="resetBtn", class="menuBtn" onclick="resetCalibration()">Reset</button>
       </div>
     </div>
-    <div id="calibratedText", class="calibrated">
-      <div class="calibratedText">
-        <h2>We have detected that you have completed calibration before. Please click the "Check" button to see if
-            the eye tracking is still suitable. If so then click continue, if not then click the "Reset" button to redo
-            the calibration.</h2>
-      </div>
+    <div id="calibration", class="calibration">
+      <button id="calibrationBtn", style="margin-top: calc(10vh - 25px); margin-left: calc(5vw - 25px);", class="calibrationBtn" onclick="clickedBtn()"></button>
     </div>
-    <div class="allMenuBtns">
-      <button class="menuBtn" onclick="checkCalibration()">Check</button>
-      <button class="menuBtn" onclick="beginCalibration()">Start Calibration</button>
-      <button class="menuBtn" onclick="finishCalibration()">Continue</button>
-      <button class="menuBtn" onclick="resetCalibration()">Reset</button>
-    </div>
-
   </body>
 </html>
