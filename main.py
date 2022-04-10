@@ -7,5 +7,9 @@ app = Flask(__name__)
 def home():
     return render_template('startPage.html')
 
+@app.route('/reading', methods=['GET'])
+def reading():
+    return render_template('readingPage.html')
+
 if __name__ == "__main__":
     app.run()

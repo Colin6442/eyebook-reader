@@ -4,7 +4,7 @@
 
 
 <head>
-    <link rel="stylesheet" href="startPage.CSS">
+    <link rel="stylesheet" href="../static/css/startPage.css">
     <title>EyeReader</title>
    
 </head>
@@ -21,12 +21,15 @@
 
     
 
-<input type="file" id="real-button" hidden="hidden" accept=".pdf"/>
+<!-- <input type="file" id="real-button" hidden="hidden" accept=".pdf"/>
  <button type="button" id="custom-button">Import PDF</button> 
  <br>
  <span id="custom-text">No PDF chosen, yet</span>
- <br>
- <input type="submit" id="real-submit" onclick="document.location='readingPage.html'">
+ <br> -->
+ <form action="{{ url_for('reading')}}" method="get">
+    <input type="file" id="real-button" hidden="hidden" accept=".pdf" onchange="form.submit()" />
+    <button type="button" id="custom-button">Import PDF</button>
+</form>
 
 <script type="text/javascript">
     
