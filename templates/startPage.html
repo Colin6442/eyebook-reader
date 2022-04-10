@@ -1,32 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-
-
 <head>
     <link rel="stylesheet" href="../static/css/startPage.css">
     <title>EyeReader</title>
    
 </head>
 
-
-
-
 <body id = "myBody">
 
-    <h1> Welcome to Lazy Eye<sup>TM</sup> <br> or Something</h1>
-
-
-
-
-    
-
-<!-- <input type="file" id="real-button" hidden="hidden" accept=".pdf"/>
- <button type="button" id="custom-button">Import PDF</button> 
- <br>
- <span id="custom-text">No PDF chosen, yet</span>
- <br> -->
- <form action="{{ url_for('reading')}}" method="get">
+<h1> Welcome to Lazy Eye<sup>TM</sup> <br> or Something</h1>
+ <form action="{{ url_for('calibration')}}" method="get">
     <input type="file" id="real-button" hidden="hidden" accept=".pdf" onchange="form.submit()" />
     <button type="button" id="custom-button">Import PDF</button>
 </form>
@@ -48,11 +32,6 @@
         else
             customTxt.innerHTML = "No PDF chosen, yet";
     })
-
 </script>
-
 </body>
-
 </html>
-
-
