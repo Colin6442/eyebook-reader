@@ -1,1 +1,112 @@
 /*Comment*/
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: lightpink;
+}
+
+.allText{
+    background-color: rgba(25, 118, 92, 0.5);
+    width: 90vw;
+    height: 20vh;
+    top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;  
+}
+
+.startText{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    margin-top: -14vh;
+    text-align: left;
+    width: 45vw;
+    height: calc(18vh + 10px);
+}
+
+.calibratedText{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin: auto;
+    text-align: left;
+    width: 45vw;
+    height: 12vh;
+}
+
+.calibrationBtn{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: 3px solid black;
+    border-radius: 50%;
+}
+.calibrationBtn:hover{
+    background-color: rgb(255, 138, 138);
+}
+
+.menu{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 255, 251, 0.25);
+}
+
+.menuBtn{
+    display: none;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(59, 243, 191);
+    border: 3px solid black;
+    margin-top: 25px;
+    margin-left: calc(50vw - 100px);
+}
+
+.menuBtn:hover{
+    background-color: rgb(255, 126, 126);
+}
+
+.calibrated{
+    display: none;
+    background-color: rgba(25, 118, 92, 0.5);
+    width: 60vw;
+    height: 14vh;
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+
+.allMenuBtns{
+    width: 100vw;
+    height: 20vh;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+.calibration{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(59, 243, 191, .5);
+}
+
+a{
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 black;
+    transition: ease-out 0.3s;
+}
+
+a:hover {
+    box-shadow: inset 300px 0 0 0 white;
+    color: black;
+}
