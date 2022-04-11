@@ -18,9 +18,10 @@
       </h1>
       <br>
       
-      <input type="file" id="fileUpload"  accept=".pdf, .txt, .epub" name = "uploadedPDF" onchange="form.submit()" />
-      <button type="button" id="custom-button">Import PDF</button>
-     
+      <embed src= "{{url_for('file')}}" width= "100%" height="800px" type="application/pdf">
+         <!-- <p>Alternative text - include a link 
+            <a href="../uploads/upload.pdf">to the PDF!</a>
+         <p> -->
          
    </body>
    

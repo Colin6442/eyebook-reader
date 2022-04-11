@@ -1,5 +1,5 @@
 import os
-from flask import render_template, redirect, request, url_for, Flask, flash
+from flask import render_template, redirect, request, url_for, Flask, flash, send_from_directory
 from werkzeug.utils import secure_filename
 
 UpFolder = './uploads'
@@ -48,7 +48,9 @@ def calibration():
             return render_template('calibrationPage.html')
     return render_template('calibrationPage.html')
     
-    
+@app.route('/file', methods=['GET'])
+def file():
+    return send_from_directory(app.config['UPLOAD_FOLDER'], 'upload.pdf')
 
 @app.route('/reading', methods=['GET', 'POST'])
 def reading():
