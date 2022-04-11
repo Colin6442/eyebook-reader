@@ -31,20 +31,17 @@ def calibration():
         # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
-            print("bad")
-            return redirect(request.url)
+            return redirect(url_for("home"))
         file = request.files['file']
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file.filename == '':
             flash('No selected file')
-            print("bad")
-            return redirect(request.url)
+            return redirect(url_for("home"))
         if file and allowed_file(file.filename):
             file.filename = "upload." + file.filename.rsplit('.',1)[1]
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            print("good")
             return render_template('calibrationPage.html')
     return render_template('calibrationPage.html')
     
