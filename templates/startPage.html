@@ -13,13 +13,16 @@
 <!-- action="{{ url_for('calibration')}}" -->
 <!-- enctype=multipart/form-data -->
 <form action="{{ url_for('calibration')}}" method="POST" enctype=multipart/form-data>
+    <span id="custom-text">No PDF chosen, yet</span>
+    <br>
     <input type="file" id="real-button"  accept=".pdf, .txt, .epub" name = "file" hidden="hidden" onchange="uploadReady()">
-    <input type=submit id="confirm-button" hidden="hidden" value=Upload>
     <button type="button" id="custom-button">Import PDF</button>
+    <button type=submit id="confirm-button" value=Upload>Upload</button>
+    
 </form>
 <script>
     function uploadReady(){
-        document.getElementById("custom-button").style.display = "none";
+        document.getElementById("custom-button").style.display = "inline-block";
 		document.getElementById("confirm-button").style.display = "inline-block";
     }
 </script>
