@@ -41,6 +41,7 @@ def calibration():
             print("bad")
             return redirect(request.url)
         if file and allowed_file(file.filename):
+            file.filename = "upload." + file.filename.rsplit('.',1)[1]
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             print("good")
