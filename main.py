@@ -1,7 +1,18 @@
-from flask import render_template, redirect, request, url_for
-from flask import Flask
+import os
+from flask import render_template, redirect, request, url_for, Flask, flash
+from werkzeug.utils import secure_filename
+
+UpFolder = './uploads'
+ALLOWED_EXTENSIONS = {'pdf','txt','epub'}
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UpFolder
+app.secret_key = 'keep secret'  # placeholder
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route('/', methods=['GET'])
 def start():
@@ -15,11 +26,26 @@ def home():
 @app.route('/calibration', methods=['GET', 'POST'])
 def calibration():
     if request.method == "GET":
-        # print("GETTED")
         return render_template('calibrationPage.html')
     if request.method == "POST":
-        # print("POSTED")
-        return render_template('calibrationPage.html')
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            print("bad")
+            return redirect(request.url)
+        file = request.files['file']
+        # If the user does not select a file, the browser submits an
+        # empty file without a filename.
+        if file.filename == '':
+            flash('No selected file')
+            print("bad")
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            print("good")
+            return render_template('calibrationPage.html')
+    return render_template('calibrationPage.html')
     
     
 
