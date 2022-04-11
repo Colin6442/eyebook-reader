@@ -3,7 +3,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def start():
     return redirect(url_for("home"))
 
@@ -12,11 +12,18 @@ def start():
 def home():
     return render_template('startPage.html')
 
-@app.route('/calibration', methods=['GET'])
+@app.route('/calibration', methods=['GET', 'POST'])
 def calibration():
-    return render_template('calibrationPage.html')
+    if request.method == "GET":
+        # print("GETTED")
+        return render_template('calibrationPage.html')
+    if request.method == "POST":
+        # print("POSTED")
+        return render_template('calibrationPage.html')
+    
+    
 
-@app.route('/reading', methods=['GET'])
+@app.route('/reading', methods=['GET', 'POST'])
 def reading():
     return render_template('readingPage.html')
 

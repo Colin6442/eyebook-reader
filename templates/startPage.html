@@ -10,8 +10,9 @@
 <body id = "myBody">
 
 <h1> Welcome to Lazy Eye<sup>TM</sup> <br> or Something</h1>
- <form action="{{ url_for('calibration')}}" method="get">
-    <input type="file" id="real-button" hidden="hidden" accept=".pdf" onchange="form.submit()" />
+
+<form action="{{ url_for('reading')}}" method="POST">
+    <input type="file" id="real-button"  accept=".pdf, .txt, .epub" name = "uploadedPDF" onchange="form.submit()" />
     <button type="button" id="custom-button">Import PDF</button>
 </form>
 
