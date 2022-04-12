@@ -28,12 +28,9 @@ def calibration():
     if request.method == "GET":
         return render_template('calibrationPage.html')
     if request.method == "POST":
-        # check if the post request has the file part
         if 'file' not in request.files:
             return redirect(url_for("home"))
         file = request.files['file']
-        # If the user does not select a file, the browser submits an
-        # empty file without a filename.
         if file.filename == '':
             return redirect(url_for("home"))
         if file and allowed_file(file.filename):
@@ -46,6 +43,10 @@ def calibration():
 @app.route('/file', methods=['GET'])
 def file():
     return send_from_directory(app.config['UPLOAD_FOLDER'], 'upload.pdf')
+
+@app.route('/uploads/upload.txt', methods=['GET'])
+def upload():
+    return send_from_directory(app.config['UPLOAD_FOLDER'], 'upload.txt')
 
 @app.route('/reading', methods=['GET', 'POST'])
 def reading():

@@ -6,7 +6,7 @@
       <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- Eyetracking Stuff -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script>  <!-- Camera Stuff -->
       <script src="../static/js/webgazer.js"></script>     <!-- Eyetracking Stuff -->
-      <script src="../static/js/tracking.js"></script>   <!-- Tracker Display -->
+      <script src="../static/js/readingPage.js"></script>
       <link rel="stylesheet" type="text/css" href="../static/css/readingPage.css">
    </head>
 
@@ -18,7 +18,9 @@
       </h1> -->
       <br>
       
-      <embed src= "{{url_for('file')}}" width= "100%" height="800px" type="application/pdf">
-         
+      <!-- <embed src= "{{url_for('file')}}" width= "100%" height="800px" type="application/pdf"> -->
+      <div id="textBox">
+         <p id="txtSect">Test</p>
+      </div>
    </body>
 </html>
