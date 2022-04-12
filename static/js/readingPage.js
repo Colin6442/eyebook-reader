@@ -30,13 +30,13 @@ var eyeListener = async function(data, clock) {
     if (!webgazerCanvas) {
         webgazerCanvas = webgazer.getVideoElementCanvas();
     }
-
+    var textContainer = document.getElementById('txtSect')
     if(data.y < screen.height*.1){
-
+        textContainer.scrollTop -= 10;
     }
     
     if(data.y > screen.height*.9){
-
+        textContainer.scrollTop += 10;
     }
     
 }
