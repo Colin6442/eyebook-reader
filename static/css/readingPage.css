@@ -17,6 +17,10 @@ p {
     overflow:scroll;
     overflow-x: hidden;
     height: 1000px;
+    margin: 5%;
+    border: 2px;
+    padding: 5%;
+    border-style: solid;
 }
 
 .allText{
