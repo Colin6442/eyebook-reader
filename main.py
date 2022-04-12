@@ -44,6 +44,10 @@ def calibration():
 def file():
     return send_from_directory(app.config['UPLOAD_FOLDER'], 'upload.pdf')
 
+@app.route('/uploads/upload.txt', methods=['GET'])
+def upload():
+    return send_from_directory(app.config['UPLOAD_FOLDER'], 'upload.txt')
+
 @app.route('/reading', methods=['GET', 'POST'])
 def reading():
     return render_template('readingPage.html')
