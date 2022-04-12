@@ -14,7 +14,9 @@ h2 {
 }
 p {
     font-size: x-large;
-    overflow: scroll;
+    overflow:scroll;
+    overflow-x: hidden;
+    height: 1000px;
 }
 
 .allText{
