@@ -24,7 +24,6 @@ var pos = 0;
 var eyeListener = async function(data, clock) {
   //do scrolling things
   var scrollBar = document.getElementById("textBox");
-  scrollBar.scrollTop += 100;
   if(!data)
         return;
     if (!webgazerCanvas) {

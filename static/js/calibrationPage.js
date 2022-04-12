@@ -73,7 +73,7 @@ var checkCalibration = async function() {
 }
 
 function clickedBtn(){
-  if(currentCal < 21){
+  if(currentCal < 20){
     var x, y;
     x = currentCal % 5;
     y = Math.floor(currentCal/5);
