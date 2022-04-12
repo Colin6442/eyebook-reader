@@ -35,7 +35,7 @@ var eyeListener = async function(data, clock) {
         textContainer.scrollTop -= 10;
     }
     
-    if(data.y > screen.height*.9){
+    if(data.y > screen.height*.7){
         textContainer.scrollTop += 10;
     }
     
