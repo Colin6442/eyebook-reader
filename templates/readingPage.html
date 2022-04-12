@@ -6,31 +6,19 @@
       <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- Eyetracking Stuff -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script>  <!-- Camera Stuff -->
       <script src="../static/js/webgazer.js"></script>     <!-- Eyetracking Stuff -->
-      <script src="../static/js/traking.js"></script>   <!-- Tracker Display -->
+      <script src="../static/js/tracking.js"></script>   <!-- Tracker Display -->
       <link rel="stylesheet" type="text/css" href="../static/css/readingPage.css">
    </head>
 
    <body>
-      <!--<h1>
+      <a href="{{ url_for('home')}}">BACK</a>
+      <!-- <h1>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit est eu purus posuere, eu tempus lacus condimentum. Etiam sed purus ultrices, viverra dui et, venenatis felis. Curabitur nec fringilla urna. Ut nec posuere nunc. Nulla tristique nisl consectetur, varius diam vitae, vulputate leo. Quisque sed eleifend neque, eget lacinia nulla. Nunc sit amet ultricies nibh. In hac habitasse platea dictumst.
-         Nulla facilisi. Mauris auctor purus vitae tellus venenatis suscipit. Praesent lobortis nibh vel maximus molestie. Nullam dapibus dolor lacus, vitae imperdiet neque sodales ut. Proin lectus mauris, pellentesque quis lacus quis, laoreet feugiat erat. Phasellus condimentum rutrum fermentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean urna purus, ornare nec eros sit amet, pellentesque fermentum risus. In porta mauris id pulvinar cursus. Nullam eleifend, magna ut tincidunt fermentum, arcu lectus maximus lacus, eu tristique dui nulla ac dui. Quisque sodales consectetur commodo.
-         Fusce mi turpis, accumsan eget nisi eget, auctor sagittis orci. Nullam ut diam at neque euismod pretium vitae vitae turpis. Vestibulum vestibulum metus eu sem mollis condimentum. Fusce dapibus pellentesque justo eu viverra. Pellentesque volutpat neque eget tellus ornare fringilla. Integer ultricies lacus in nunc fermentum, vitae pretium ligula elementum. Donec ullamcorper felis in laoreet ultricies. Proin eros purus, pellentesque at gravida vitae, lobortis vitae arcu. Vivamus facilisis facilisis est, in elementum nunc congue at. Duis consectetur dui mi, vel aliquet eros interdum eget. Nunc quis lorem risus. Vivamus sem urna, semper id velit ut, eleifend efficitur sem. Aenean vehicula convallis sodales. Cras vitae nisl eu ex tristique fermentum. Maecenas lectus enim, dapibus nec congue ac, commodo vitae nisl.
-         Pellentesque consequat auctor rhoncus. Phasellus eget felis elit. Nunc rutrum dolor vel ligula semper, ut ultricies purus pulvinar. Sed et erat iaculis, ultricies leo sed, sagittis tellus. Cras rutrum magna accumsan lectus imperdiet maximus. Morbi fringilla, diam a varius volutpat, leo lacus iaculis orci, id placerat tellus libero ornare turpis. Ut nec nisl vel dolor vulputate pulvinar sit amet nec nisl. Maecenas ipsum odio, venenatis eu pulvinar blandit, lacinia sit amet lectus. Nam a rhoncus turpis.
-         Sed sagittis velit in tristique pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam eget sem ac sem maximus fermentum. Nullam varius ligula vitae enim malesuada dapibus. Curabitur pharetra risus sed mauris pretium, id condimentum augue maximus. Mauris euismod leo eget turpis rutrum molestie. Fusce ultricies dapibus felis, vel mattis arcu aliquam vitae. Pellentesque non massa fringilla, varius purus id, consequat sapien.</h1> -->
-
-         <a href="./startPage.html">BACK</a>
-         <br>
-         
-         <div>
-            <object
-              data='/Users/buche/Desktop/Books/Introduction_to_algorithms-3rd%20Edition.pdf'
-              type="application/pdf"
-              width="1500"
-              height="1400">
+         Nulla facilisi. Mauris auctor purus vitae tellus venenatis suscipit. c dui
+      </h1> -->
+      <br>
       
-          
-            </object>
-          </div>
+      <embed src= "{{url_for('file')}}" width= "100%" height="800px" type="application/pdf">
+         
    </body>
-
 </html>
