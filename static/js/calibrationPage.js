@@ -54,7 +54,9 @@ function isCalibrated(){
 
 function resetCalibration(){
   localforage.clear();
-	location.reload();
+  var base_url = window.location.origin;
+  base_url = base_url + "/calibration"
+  location.href = base_url;
 }
 
 var checkCalibration = async function() {
