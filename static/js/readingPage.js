@@ -23,6 +23,7 @@ window.onbeforeunload = function() {
 var webgazerCanvas = null;
 var pos = 0;
 var eyeListener = async function(data, clock) {
+  //do scrolling things
   var scrollBar = document.getElementById("textBox");
   scrollBar.scrollTop += 100;
   if(!data)
