@@ -54,7 +54,9 @@ function isCalibrated(){
 
 function resetCalibration(){
   localforage.clear();
-	location.reload();
+  var base_url = window.location.origin;
+  base_url = base_url + "/calibration"
+  location.href = base_url;
 }
 
 var checkCalibration = async function() {
@@ -79,10 +81,14 @@ function clickedBtn(){
     document.getElementById("calibrationBtn").style.marginLeft = "calc(" + coordsX[x] + "vw - 25px)";
     currentCal++;
   }else{
-    location.href = "../../templates/readingPage.html";
+    var base_url = window.location.origin;
+    base_url = base_url + "/reading"
+    location.href = base_url;
   }
 }
 
 function finishCalibration(){
-  location.href = "../../templates/readingPage.html";
+  var base_url = window.location.origin;
+    base_url = base_url + "/reading"
+    location.href = base_url;
 }

@@ -1,41 +1,42 @@
-function PlotGaze(GazeData) {
-/*  GazeData.state // 0: valid gaze data; -1 : face tracking lost, 1 : gaze uncalibrated
-    GazeData.docX // gaze x in document coordinates
-    GazeData.docY // gaze y in document cordinates
-    GazeData.time // timestamp */
+fetch('../../uploads/upload.txt')
+  .then(response => response.text())
+  .then(text => document.getElementById("txtSect").innerHTML = text)
 
+window.onload = async function() {
+    const webgazerInstance = await webgazer.setRegression('weightedRidge') /* currently must set regression and tracker */
+        .setTracker('TFFacemesh')
+        .begin();
+    webgazerInstance.showVideoPreview(false) /* shows all video previews */
+        .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
+        .applyKalmanFilter(true); // Kalman Filter defaults to on.
+        
+    webgazer.removeOnlyMouseMoveListeners();
+    webgazer.setGazeListener(eyeListener);
 
-    document.getElementById("GazeData").innerHTML = "GazeX: " + GazeData.GazeX + " GazeY: " + GazeData.GazeY;
-    document.getElementById("HeadPhoseData").innerHTML = " HeadX: " + GazeData.HeadX + " HeadY: " + GazeData.HeadY + " HeadZ: " + GazeData.HeadZ;
-    document.getElementById("HeadRotData").innerHTML = " Yaw: " + GazeData.HeadYaw + " Pitch: " + GazeData.HeadPitch + " Roll: " + GazeData.HeadRoll;
-             
-    var x = GazeData.docX;
-    var y = GazeData.docY;
-             
-    var gaze = document.getElementById("gaze");
-    x -= gaze.clientWidth/2;
-    y -= gaze.clientHeight/2;
-             
-    gaze.style.left = x + "px";
-    gaze.style.top = y + "px";
+};
 
+window.onbeforeunload = function() {
+	webgazer.end();
+}
 
-    if(GazeData.state != 0){
-        if(gaze.style.display  == 'block'){
-            gaze.style.display = 'none';
-        }else{
-            if(gaze.style.display  == 'none'){
-                gaze.style.display = 'block';
-            }
-        }
+var webgazerCanvas = null;
+var pos = 0;
+var eyeListener = async function(data, clock) {
+  //do scrolling things
+  var scrollBar = document.getElementById("textBox");
+  scrollBar.scrollTop += 100;
+  if(!data)
+        return;
+    if (!webgazerCanvas) {
+        webgazerCanvas = webgazer.getVideoElementCanvas();
     }
-
-    //set callbacks
-    window.addEventListener("load", function() {
-        GazeCloudAPI.OnCalibrationComplete =function(){ console.log('gaze Calibration Complete')  }
-        GazeCloudAPI.OnCamDenied =  function(){ console.log('camera  access denied')  }
-        GazeCloudAPI.OnError =  function(msg){ console.log('err: ' + msg)  }
-        GazeCloudAPI.UseClickRecalibration = true;
-        GazeCloudAPI.OnResult = PlotGaze; 
-    });
+    var textContainer = document.getElementById('txtSect')
+    if(data.y < screen.height*.1){
+        textContainer.scrollTop -= 10;
+    }
+    
+    if(data.y > screen.height*.7){
+        textContainer.scrollTop += 10;
+    }
+    
 }
