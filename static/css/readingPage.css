@@ -12,7 +12,10 @@ h2 {
     font-size: large;
     font-family: "Times New Roman", Times, serif;
 }
-
+p {
+    font-size: x-large;
+    overflow: scroll;
+}
 
 .allText{
     background-color: rgb(52, 155, 234);
