@@ -18,7 +18,7 @@
     color: black;
 }
   #confirm-button {
-    background-color: darkred;
+    background-color: royalblue;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -58,9 +58,9 @@
   }
   
   h1 {
-      color: black;
-      text-shadow: 5px 5px 8px rgb(40, 43, 46);   
+      color: rgb(0, 0, 0);      
       text-align:center;
+      margin-top: 20vh;
   }
   
   #custom-text {
@@ -90,30 +90,8 @@
     color: white;
 }
 
-h1 {
-    color: black;
-    text-shadow: 5px 5px 8px rgb(40, 43, 46);   
-    text-align:center;
-}
-
-#custom-text {
-background-color:rgb(233, 224, 224);
-margin-left: 10px;
-font-family:'Courier New';
-border: solid black;
-color: black;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-
-margin: 4px 2px;
 
 
 
-}
 
-#myBody {
-    background-color: lightpink; 
-    text-align:center;
-    }
+
