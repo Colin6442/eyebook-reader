@@ -79,10 +79,10 @@ function clickedBtn(){
     document.getElementById("calibrationBtn").style.marginLeft = "calc(" + coordsX[x] + "vw - 25px)";
     currentCal++;
   }else{
-    location.href = "./readingPage.html";
+    location.href = "../../templates/readingPage.html";
   }
 }
 
 function finishCalibration(){
-  location.href = "./readingPage.html";
+  location.href = "../../templates/readingPage.html";
 }
