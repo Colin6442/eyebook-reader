@@ -2,7 +2,7 @@ import os
 from flask import render_template, redirect, request, url_for, Flask, flash, send_from_directory
 from werkzeug.utils import secure_filename
 
-UpFolder = './uploads'
+UpFolder = './uploads/'
 ALLOWED_EXTENSIONS = {'pdf','txt','epub'}
 
 app = Flask(__name__)
@@ -36,7 +36,7 @@ def calibration():
         if file and allowed_file(file.filename):
             file.filename = "upload." + file.filename.rsplit('.',1)[1]
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return render_template('calibrationPage.html')
     return render_template('calibrationPage.html')
     

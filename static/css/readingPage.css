@@ -58,6 +58,28 @@ div{
     width: 45vw;
     height: 12vh;
 }
+.popMenu{
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 black;
+    transition: ease-out 0.3s;
+    position:absolute;
+    top:0;
+    right:0;
+}
+.popMenu:hover{
+    box-shadow: inset 300px 0 0 0 white;
+    color: black;
+}
 
 .calibrationBtn{
     width: 50px;
@@ -78,6 +100,7 @@ div{
 
 .menuBtn{
     background-color: royalblue;
+    border-radius: 10px;
     display: none;
     width: 200px;
     height: 50px;
@@ -127,6 +150,7 @@ div{
 
 a{
     background-color: black;
+    border-radius: 10px;
     border: none;
     color: white;
     padding: 15px 32px;

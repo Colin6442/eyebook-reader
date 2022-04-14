@@ -1,4 +1,4 @@
-fetch('../../uploads/upload.txt')
+fetch('/uploads/upload.txt')
   .then(response => response.text())
   .then(text => document.getElementById("txtSect").innerHTML = text)
 
@@ -37,5 +37,8 @@ var eyeListener = async function(data, clock) {
     if(data.y > screen.height*.7){
         textContainer.scrollTop += 10;
     }
+    
+}
+function popMenu() {
     
 }
