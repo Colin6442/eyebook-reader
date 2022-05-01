@@ -53,7 +53,6 @@ function popMenu() {
 
 }
 function changeColor(color) {
-    // Initial click functionality
     if (color == "white") {
         document.getElementById("txtSect").style.backgroundColor = "white";
         document.getElementById("txtSect").style.color = "black";
@@ -67,7 +66,6 @@ function changeColor(color) {
 }
 
 function changeSize(size) {
-    // Initial click functionality
     if (size == "small") {
         document.getElementById("txtSect").style.fontSize = "medium";
     }else if (size == "medium") {
@@ -76,13 +74,23 @@ function changeSize(size) {
         document.getElementById("txtSect").style.fontSize = "x-large";
     }
 }
+
 function changeMargin(size) {
-    // Initial click functionality
     if (size == "small") {
         document.getElementById("txtSect").style.padding = "2%";
     }else if (size == "medium") {
         document.getElementById("txtSect").style.padding = "5%";
     }else{
         document.getElementById("txtSect").style.padding = "10%";
+    }
+}
+
+function changeFont(font) {
+    if (font == "arial") {
+        document.getElementById("txtSect").style.fontFamily = "Arial,Helvetica,sans-serif";
+    }else if (font == "sans") {
+        document.getElementById("txtSect").style.fontFamily = " Times, 'Times New Roman', Georgia, serif";
+    }else{
+        document.getElementById("txtSect").style.fontFamily = "'Lucida Console', Courier, monospace";
     }
 }
