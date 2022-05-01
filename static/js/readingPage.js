@@ -40,5 +40,13 @@ var eyeListener = async function(data, clock) {
     
 }
 function popMenu() {
-    
+    if (document.getElementById("popMenu").style.display == "block") {
+        document.getElementById("popMenu").style.display = "none";
+        document.getElementById("popMenuButt").style.borderBottomLeftRadius = "10px";
+        document.getElementById("popMenuButt").style.borderBottomRightRadius = "10px";
+    }else{
+        document.getElementById("popMenu").style.display = "block";
+        document.getElementById("popMenuButt").style.borderBottomLeftRadius = "0px";
+        document.getElementById("popMenuButt").style.borderBottomRightRadius = "0px";
+    }
 }

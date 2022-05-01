@@ -59,16 +59,35 @@ div{
     height: 12vh;
 }
 .popMenu{
+    display: hidden;
     background-color: black;
     border: none;
     border-radius: 10px;
+    border-top-right-radius: 0%;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    margin-right: 2px;
+    cursor: pointer;
+    position:absolute;
+    right:0;
+    width: 30%;
+    height: 30%;
+}
+.popMenuButt{
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    /* border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%; */
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    /* margin: 4px 2px; */
+    margin-top: 4px;
+    margin-right: 2px;
     cursor: pointer;
     box-shadow: inset 0 0 0 0 black;
     transition: ease-out 0.3s;
@@ -76,7 +95,7 @@ div{
     top:0;
     right:0;
 }
-.popMenu:hover{
+.popMenuButt:hover{
     box-shadow: inset 300px 0 0 0 white;
     color: black;
 }
@@ -158,7 +177,8 @@ a{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin-top: 4px;
+    margin-left: 2px;
     cursor: pointer;
     box-shadow: inset 0 0 0 0 black;
     transition: ease-out 0.3s;
