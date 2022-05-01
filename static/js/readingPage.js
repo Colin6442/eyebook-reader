@@ -40,6 +40,7 @@ var eyeListener = async function(data, clock) {
     
 }
 function popMenu() {
+    // Initial click functionality
     if (document.getElementById("popMenu").style.display == "block") {
         document.getElementById("popMenu").style.display = "none";
         document.getElementById("popMenuButt").style.borderBottomLeftRadius = "10px";
@@ -48,5 +49,19 @@ function popMenu() {
         document.getElementById("popMenu").style.display = "block";
         document.getElementById("popMenuButt").style.borderBottomLeftRadius = "0px";
         document.getElementById("popMenuButt").style.borderBottomRightRadius = "0px";
+    }
+
+}
+function changeColor(color) {
+    // Initial click functionality
+    if (color == "white") {
+        document.getElementById("txtSect").style.backgroundColor = "white";
+        document.getElementById("txtSect").style.color = "black";
+    }else if (color == "beige") {
+        document.getElementById("txtSect").style.backgroundColor = "beige";
+        document.getElementById("txtSect").style.color = "black";
+    }else{
+        document.getElementById("txtSect").style.backgroundColor = "black";
+        document.getElementById("txtSect").style.color = "white";
     }
 }
