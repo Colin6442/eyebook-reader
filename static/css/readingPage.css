@@ -11,7 +11,7 @@ p {
     height: 1000px;
     margin: 5%;
     border: 2px;
-    padding: 10%;
+    padding: 5%;
     border-style: solid;
     background-color: white;
 }
@@ -20,22 +20,6 @@ div{
     height:100%;
 }
 
-.popMenu{
-    display: hidden;
-    background-color: royalblue;
-    border: none;
-    border-radius: 10px;
-    border-top-right-radius: 0%;
-    font-size: 16px;
-    /* margin: 4px 2px; */
-    margin-right: 2px;
-    cursor: pointer;
-    position:absolute;
-    right:0;
-    width: 23%;
-    height: 30%;
-    padding: 10px;
-}
 .popMenuButt{
     background-color: royalblue;
     border: none;
@@ -58,10 +42,29 @@ div{
     top:0;
     right:0;
 }
+
 .popMenuButt:hover{
     box-shadow: inset 300px 0 0 0 white;
     color: black;
 }
+
+.popMenu{
+    display: hidden;
+    background-color: royalblue;
+    border: none;
+    border-radius: 10px;
+    border-top-right-radius: 0%;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    margin-right: 2px;
+    cursor: pointer;
+    position:absolute;
+    right:0;
+    width: 23%;
+    height: 30%;
+    padding: 10px;
+}
+
 label{
     background-color: royalblue;
     border-radius: 10px;
@@ -77,16 +80,14 @@ label{
     margin-top: 15px;
     margin-bottom: 5px;
 }
+
 .menuButt{
     background-color: royalblue;
     border: solid;
     border-width: 2px;
     border-color: white;
     border-radius: 10px;
-    /* border-bottom-left-radius: 0%;
-    border-bottom-right-radius: 0%; */
     color: white;
-    /* padding: 15px 32px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
