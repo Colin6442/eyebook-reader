@@ -14,19 +14,23 @@
       <a href="{{ url_for('home')}}">BACK</a>
       <button class = "popMenuButt" type="button" id = "popMenuButt" onclick="popMenu()">Menu</button>
       <div class = "popMenu" id = "popMenu" hidden = "hidden">
-         <button class = "menuButt" type="button" >Color:</button>
+         <label>Color:</label>
          <br>
          <button class = "menuButt" type="button" backgroundColor = "white" onclick="changeColor('white')">White</button>
          <button class = "menuButt" type="button" onclick="changeColor('beige')">Beige</button>
          <button class = "menuButt" type="button" onclick="changeColor('black')">Black</button>
+
          <br>
-         <button class = "menuButt" type="button" >Text Size:</button>
+
+         <label>Font Size:</label>
          <br>
          <button class = "menuButt" type="button" onclick="changeSize('small')">Small</button>
          <button class = "menuButt" type="button" onclick="changeSize('medium')">Medium</button>
          <button class = "menuButt" type="button" onclick="changeSize('large')">Large</button>
+
          <br>
-         <button class = "menuButt" type="button" >Margin Size:</button>
+
+         <label>Margin Size:</label>
          <br>
          <button class = "menuButt" type="button" onclick="changeMargin('small')">Small</button>
          <button class = "menuButt" type="button" onclick="changeMargin('medium')">Medium</button>
