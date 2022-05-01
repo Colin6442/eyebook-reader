@@ -11,7 +11,10 @@
    </head>
 
    <div>
-      <a href="{{ url_for('home')}}">BACK</a>
+      <!-- <a href="{{ url_for('home')}}">Back</a> -->
+      <form action="{{ url_for('home')}}">
+         <button class = "back" type=submit>Back</button>  
+     </form>
       <button class = "popMenuButt" type="button" id = "popMenuButt" onclick="popMenu()">Menu</button>
       <div class = "popMenu" id = "popMenu" hidden = "hidden">
          <label>Color:</label>
