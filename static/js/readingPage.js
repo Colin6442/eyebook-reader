@@ -76,3 +76,13 @@ function changeSize(size) {
         document.getElementById("txtSect").style.fontSize = "x-large";
     }
 }
+function changeMargin(size) {
+    // Initial click functionality
+    if (size == "small") {
+        document.getElementById("txtSect").style.padding = "2%";
+    }else if (size == "medium") {
+        document.getElementById("txtSect").style.padding = "5%";
+    }else{
+        document.getElementById("txtSect").style.padding = "10%";
+    }
+}
