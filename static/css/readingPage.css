@@ -4,14 +4,6 @@ body {
     background-color: lightpink;
 }
 
-h1 {
-    font-size: x-large;
-    font-family: "Times New Roman", Times, serif; 
-}
-h2 {
-    font-size: large;
-    font-family: "Times New Roman", Times, serif;
-}
 p {
     font-size: x-large;
     overflow:scroll;
@@ -28,36 +20,6 @@ div{
     height:100%;
 }
 
-.allText{
-    background-color: rgb(84, 168, 233);
-    width: 90vw;
-    height: 20vh;
-    top: 25vh;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 30px;  
-}
-
-.startText{    
-    padding-left: 10px;
-    padding-right: 10px;
-    color:rgb(0, 0, 0);
-    margin: auto;
-    margin-top: -14vh;
-    text-align: left;
-    width: 45vw;
-    height: calc(18vh + 5px);
-}
-
-.calibratedText{
-    border-radius: 30px;
-    color:rgb(0, 0, 0);
-    padding: 10px;
-    margin: auto;
-    text-align: left;
-    width: 45vw;
-    height: 12vh;
-}
 .popMenu{
     display: hidden;
     background-color: royalblue;
@@ -119,72 +81,6 @@ div{
     box-shadow: inset 0 0 0 0 black;
     transition: ease-out 0.3s;
     width: 32%;
-}
-.calibrationBtn{
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    border: 3px solid black;
-    border-radius: 50%;
-}
-.calibrationBtn:hover{
-    background-color: rgb(255, 138, 138);
-}
-
-.menu{
-    width: 100vw;
-    height: 100vh;
-    background-color: lightpink;
-}
-
-.menuBtn{
-    background-color: royalblue;
-    border-radius: 10px;
-    display: none;
-    width: 200px;
-    height: 50px;
-    border: none;
-    margin-top: 25px;
-    margin-left: calc(50vw - 100px);
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: none;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: inset 0 0 0 0 black;
-    transition: ease-out 0.3s;
-}
-
-.menuBtn:hover{
-    box-shadow: inset 300px 0 0 0 white;
-    color: black;
-}
-
-.calibrated{
-    display: none;
-    background-color: rgb(84, 168, 233);
-    width: 60vw;
-    height: 14vh;
-    margin-top: 2vh;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-}
-
-.allMenuBtns{
-    width: 100vw;
-    height: 20vh;
-    margin-left: auto;
-    margin-right: auto;   
-}
-
-.calibration{
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(59, 243, 191, .5);
 }
 
 a{
