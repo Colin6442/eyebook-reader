@@ -65,3 +65,14 @@ function changeColor(color) {
         document.getElementById("txtSect").style.color = "white";
     }
 }
+
+function changeSize(size) {
+    // Initial click functionality
+    if (size == "small") {
+        document.getElementById("txtSect").style.fontSize = "medium";
+    }else if (size == "medium") {
+        document.getElementById("txtSect").style.fontSize = "large";
+    }else{
+        document.getElementById("txtSect").style.fontSize = "x-large";
+    }
+}
