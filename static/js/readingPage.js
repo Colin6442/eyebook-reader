@@ -53,44 +53,82 @@ function popMenu() {
 
 }
 function changeColor(color) {
+    resetClass("color");
     if (color == "white") {
         document.getElementById("txtSect").style.backgroundColor = "white";
         document.getElementById("txtSect").style.color = "black";
+        changeClass("c1");
     }else if (color == "beige") {
         document.getElementById("txtSect").style.backgroundColor = "beige";
         document.getElementById("txtSect").style.color = "black";
+        changeClass("c2");
     }else{
         document.getElementById("txtSect").style.backgroundColor = "black";
         document.getElementById("txtSect").style.color = "white";
+        changeClass("c3");
     }
 }
 
 function changeSize(size) {
+    resetClass("size");
     if (size == "small") {
         document.getElementById("txtSect").style.fontSize = "medium";
+        changeClass("s1");
     }else if (size == "medium") {
         document.getElementById("txtSect").style.fontSize = "large";
+        changeClass("s2");
     }else{
         document.getElementById("txtSect").style.fontSize = "x-large";
+        changeClass("s3");
     }
 }
 
 function changeMargin(size) {
+    resetClass("margin");
     if (size == "small") {
         document.getElementById("txtSect").style.padding = "2%";
+        changeClass("m1");
     }else if (size == "medium") {
         document.getElementById("txtSect").style.padding = "5%";
+        changeClass("m2");
     }else{
         document.getElementById("txtSect").style.padding = "10%";
+        changeClass("m3");
     }
 }
 
 function changeFont(font) {
+    resetClass("font")
     if (font == "arial") {
         document.getElementById("txtSect").style.fontFamily = "Arial,Helvetica,sans-serif";
+        changeClass("f1");
     }else if (font == "sans") {
         document.getElementById("txtSect").style.fontFamily = " Times, 'Times New Roman', Georgia, serif";
+        changeClass("f2");
     }else{
         document.getElementById("txtSect").style.fontFamily = "'Lucida Console', Courier, monospace";
+        changeClass("f3");
     }
+}
+function resetClass(section){
+    if (section == "color"){
+        document.getElementById("c1").className = "menuButt"
+        document.getElementById("c2").className = "menuButt"
+        document.getElementById("c3").className = "menuButt"
+    }else if(section == "size"){
+        document.getElementById("s1").className = "menuButt"
+        document.getElementById("s2").className = "menuButt"
+        document.getElementById("s3").className = "menuButt"
+    }else if(section == "margin"){
+        document.getElementById("m1").className = "menuButt"
+        document.getElementById("m2").className = "menuButt"
+        document.getElementById("m3").className = "menuButt"
+    }else{
+        document.getElementById("f1").className = "menuButt"
+        document.getElementById("f2").className = "menuButt"
+        document.getElementById("f3").className = "menuButt"
+    }
+}
+function changeClass(id){
+    document.getElementById(id).className = "menuButtActive"
 }
