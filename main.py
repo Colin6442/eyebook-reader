@@ -9,10 +9,6 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UpFolder
 app.secret_key = 'keep secret'  # placeholder
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 
 @app.route('/', methods=['GET'])
 def start():
@@ -31,12 +27,12 @@ def calibration():
         if 'file' not in request.files:
             return redirect(url_for("home"))
         file = request.files['file']
-        if file.filename == '':
+        if file.filename == '' or (file.filename[-3:] != "txt" and file.filename[-4:] != "epub"):
             return redirect(url_for("home"))
-        if file and allowed_file(file.filename):
+        if file:
             file.filename = "upload." + file.filename.rsplit('.',1)[1]
             filename = secure_filename(file.filename)
-            # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return render_template('calibrationPage.html')
     return render_template('calibrationPage.html')
     
