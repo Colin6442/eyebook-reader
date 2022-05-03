@@ -10,24 +10,9 @@
       <link rel="stylesheet" type="text/css" href="../static/css/readingPage.css">
 
       <!-- Epub Reader -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.0/jszip.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
-      {% block content %}
-      {% if fileType == "epub" %}
-      <script>
-         //EPUB Loader
-         var epub = ePub("/upload/epub");
-         var rendition = epub.renderTo("area");
-         rendition.display();
-      </script>
-      {% else %}
-      <script>
-         // TXT Loader
-         fetch('/upload/txt')
-            .then(response => response.text())
-            .then(text => document.getElementById("txtSect").innerHTML = text)
-      </script>
-      {% endif %}
-      {% endblock content %}
+      
    </head>
 
    <div>
@@ -79,6 +64,31 @@
 
       <!-- TEXT WINDOW -->
       <p id="txtSect">Placeholder</p> 
+
+      <!-- EPUB WINDOW -->
+      <div id="area" class = "epub">
+      </div>
+
+      {% block content %}
+      {% if fileType == "epub" %}
+      <script>
+         //EPUB Loader
+         var book = ePub("/uploads/upload.epub", { openAs: "epub" });
+         var rendition = book.renderTo("area", {
+            flow: "scroll"
+         });
+         var displayed = rendition.display();
+      </script>
+      {% else %}
+      <script>
+         // TXT Loader
+         document.getElementById("txtSect").style.display = "block";
+         fetch('/upload/txt')
+            .then(response => response.text())
+            .then(text => document.getElementById("txtSect").innerHTML = text)
+      </script>
+      {% endif %}
+      {% endblock content %}
 
    </div>
 </html>

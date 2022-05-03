@@ -53,12 +53,15 @@ def reading():
 
 @app.route('/upload/<fileType>', methods=['GET'])
 def upload(fileType):
-    print(fileType)
     if fileType == "txt":
         return send_from_directory(app.config['UPLOAD_FOLDER'], 'upload.txt')
     elif fileType == "epub":
         return send_from_directory(app.config['UPLOAD_FOLDER'], 'upload.epub')
     return send_from_directory(app.config['UPLOAD_FOLDER'], 'upload.txt')
+
+@app.route('/uploads/upload.epub', methods=['GET'])
+def uploads():
+    return send_from_directory(app.config['UPLOAD_FOLDER'], 'upload.epub')
 
 if __name__ == "__main__":
     app.run()
