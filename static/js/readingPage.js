@@ -110,6 +110,21 @@ function changeFont(font) {
         changeClass("f3");
     }
 }
+
+function changeAlign(align) {
+    resetClass("align")
+    if (align == "left") {
+        document.getElementById("txtSect").style.textAlign = "Left";
+        changeClass("a1");
+    }else if (align == "center") {
+        document.getElementById("txtSect").style.textAlign = "Center";
+        changeClass("a2");
+    }else{
+        document.getElementById("txtSect").style.textAlign = "Justify";
+        changeClass("a3");
+    }
+}
+
 function resetClass(section){
     if (section == "color"){
         document.getElementById("c1").className = "menuButt"
@@ -123,10 +138,14 @@ function resetClass(section){
         document.getElementById("m1").className = "menuButt"
         document.getElementById("m2").className = "menuButt"
         document.getElementById("m3").className = "menuButt"
-    }else{
+    }else if(section == "font"){
         document.getElementById("f1").className = "menuButt"
         document.getElementById("f2").className = "menuButt"
         document.getElementById("f3").className = "menuButt"
+    }else{
+        document.getElementById("a1").className = "menuButt"
+        document.getElementById("a2").className = "menuButt"
+        document.getElementById("a3").className = "menuButt"
     }
 }
 function changeClass(id){
