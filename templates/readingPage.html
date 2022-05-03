@@ -8,6 +8,26 @@
       <script src="../static/js/webgazer.js"></script>     <!-- Eyetracking Stuff -->
       <script src="../static/js/readingPage.js"></script>
       <link rel="stylesheet" type="text/css" href="../static/css/readingPage.css">
+
+      <!-- Epub Reader -->
+      <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+      {% block content %}
+      {% if fileType == "epub" %}
+      <script>
+         //EPUB Loader
+         var epub = ePub("/upload/epub");
+         var rendition = epub.renderTo("area");
+         rendition.display();
+      </script>
+      {% else %}
+      <script>
+         // TXT Loader
+         fetch('/upload/txt')
+            .then(response => response.text())
+            .then(text => document.getElementById("txtSect").innerHTML = text)
+      </script>
+      {% endif %}
+      {% endblock content %}
    </head>
 
    <div>
@@ -54,7 +74,11 @@
          <button id = "a2" class = "menuButt" type="button" onclick="changeAlign('center')">Center</button>
          <button id = "a3" class = "menuButt" type="button" onclick="changeAlign('justified')">Justified</button>
       </div>
+
       <br>
-      <p id="txtSect">Placeholder</p>
+
+      <!-- TEXT WINDOW -->
+      <p id="txtSect">Placeholder</p> 
+
    </div>
 </html>
