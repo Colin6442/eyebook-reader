@@ -8,7 +8,7 @@ p {
     font-size: x-large;
     overflow:scroll;
     overflow-x: hidden;
-    /* height: 1000px; */
+    height: 80vh;
     margin-left: 5%;
     margin-right: 5%;
     border: 2px;

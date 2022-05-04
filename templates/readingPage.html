@@ -68,14 +68,16 @@
 
 <br>
 
-<div style="display: flex;">
+<div style="display: flex; height: 100%">
 
    <div style="float: left">
       <button id="prev" class="navLeft" onclick="prevPage()">Prev</button>
    </div>
 
    <!-- TEXT WINDOW -->
-   <p id="txtSect">Placeholder</p>
+   <div >
+      <p id="txtSect">Placeholder</p>
+   </div>
 
    <!-- EPUB WINDOW -->
    <div id="area" class="epub" style="float: left"></div>
@@ -92,6 +94,9 @@
 {% if fileType == "epub" %}
 <script>
    //EPUB Loader
+   document.getElementById("prev").style.display = "inline-block"
+   document.getElementById("next").style.display = "inline-block"
+   document.getElementById("popMenuButt").style.display = "none"
    document.getElementById("area").style.display = "block"
    let divWid = document.getElementById("area").offsetWidth * 0.98;
    var book = ePub("/uploads/upload.epub", { openAs: "epub" });
@@ -111,6 +116,9 @@
 {% else %}
 <script>
    // TXT Loader
+   document.getElementById("prev").style.display = "none"
+   document.getElementById("next").style.display = "none"
+   document.getElementById("popMenuButt").style.display = "inline-block"
    document.getElementById("txtSect").style.display = "block";
    fetch('/upload/txt')
       .then(response => response.text())
