@@ -1,5 +1,6 @@
+var webgazerInstance;
 window.onload = async function() {
-    const webgazerInstance = await webgazer.setRegression('weightedRidge') /* currently must set regression and tracker */
+    webgazerInstance = await webgazer.setRegression('weightedRidge') /* currently must set regression and tracker */
         .setTracker('TFFacemesh')
         .begin();
     webgazerInstance.showVideoPreview(false) /* shows all video previews */
@@ -68,13 +69,13 @@ function changeColor(color) {
 function changeSize(size) {
     resetClass("size");
     if (size == "small") {
-        document.getElementById("txtSect").style.fontSize = "medium";
+        document.getElementById("txtSect").style.fontSize = "15px";
         changeClass("s1");
     }else if (size == "medium") {
-        document.getElementById("txtSect").style.fontSize = "large";
+        document.getElementById("txtSect").style.fontSize = "30px";
         changeClass("s2");
     }else{
-        document.getElementById("txtSect").style.fontSize = "x-large";
+        document.getElementById("txtSect").style.fontSize = "45px";
         changeClass("s3");
     }
 }
@@ -104,6 +105,17 @@ function changeFont(font) {
     }else{
         document.getElementById("txtSect").style.fontFamily = "'Lucida Console', Courier, monospace";
         changeClass("f3");
+    }
+}
+
+function changeDot(dot){
+    resetClass("dot")
+    if (dot == "enable"){
+        webgazerInstance.showPredictionPoints(true);
+        changeClass("d1");
+    }else{
+        webgazerInstance.showPredictionPoints(false);
+        changeClass("d2");
     }
 }
 
@@ -138,10 +150,13 @@ function resetClass(section){
         document.getElementById("f1").className = "menuButt"
         document.getElementById("f2").className = "menuButt"
         document.getElementById("f3").className = "menuButt"
-    }else{
+    }else if(section == "align"){
         document.getElementById("a1").className = "menuButt"
         document.getElementById("a2").className = "menuButt"
         document.getElementById("a3").className = "menuButt"
+    }else{
+        document.getElementById("d1").className = "menuButt"
+        document.getElementById("d2").className = "menuButt"
     }
 }
 function changeClass(id){
