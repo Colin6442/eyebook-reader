@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    overflow: hidden;
     background-color: lightpink;
 }
 
@@ -21,12 +20,17 @@ p {
     height:100%;
 } */
 .epub{
-    overflow:scroll;
-    overflow-x: hidden;
-    height: 1000px;
+    display: none;
+    overflow: auto;
+    word-spacing: 0px;
+    line-height: 0;
+    vertical-align: top;
+    align-items: center;
+    /* position: absolute; */
+    direction: ltr;
+    height: 70vh;
     margin: 5%;
     border: 2px;
-    padding: 5%;
     border-style: solid;
     background-color: white;
 }

@@ -1,101 +1,125 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
-   <head>
-      <title>EyeBook Reading Page</title>
-      <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- Eyetracking Stuff -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script>  <!-- Camera Stuff -->
-      <script src="../static/js/webgazer.js"></script>     <!-- Eyetracking Stuff -->
-      <script src="../static/js/readingPage.js"></script>
-      <link rel="stylesheet" type="text/css" href="../static/css/readingPage.css">
 
-      <!-- Epub Reader -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.0/jszip.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
-      
-   </head>
+<head>
+   <title>EyeBook Reading Page</title>
+   <script src="https://d3js.org/d3.v3.min.js"></script> <!-- Eyetracking Stuff -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script> <!-- Camera Stuff -->
+   <script src="../static/js/webgazer.js"></script> <!-- Eyetracking Stuff -->
+   <script src="../static/js/readingPage.js"></script>
+   <link rel="stylesheet" type="text/css" href="../static/css/readingPage.css">
 
-   <div>
-      <form action="{{ url_for('home')}}">
-         <button class = "back" type=submit>Back</button>  
-      </form>
-      <button class = "popMenuButt" type="button" id = "popMenuButt" onclick="popMenu()">Menu</button>
-      <div class = "popMenu" id = "popMenu" hidden = "hidden">
-         <label>Color:</label>
-         <br>
-         <button id = "c1" class = "menuButtActive" type="button" onclick="changeColor('white')">White</button>
-         <button id = "c2" class = "menuButt" type="button" onclick="changeColor('beige')">Beige</button>
-         <button id = "c3" class = "menuButt" type="button" onclick="changeColor('black')">Black</button>
+   <!-- Epub Reader -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.0/jszip.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
 
-         <br>
+</head>
 
-         <label>Font Size:</label>
-         <br>
-         <button id = "s1" class = "menuButt" type="button" onclick="changeSize('small')">Small</button>
-         <button id = "s2" class = "menuButt" type="button" onclick="changeSize('medium')">Medium</button>
-         <button id = "s3" class = "menuButtActive" type="button" onclick="changeSize('large')">Large</button>
+<form action="{{ url_for('home')}}">
+   <button class="back" type=submit>Back</button>
+</form>
+<button class="popMenuButt" type="button" id="popMenuButt" onclick="popMenu()">Menu</button>
+<div class="popMenu" id="popMenu" hidden="hidden">
+   <label>Color:</label>
+   <br>
+   <button id="c1" class="menuButtActive" type="button" onclick="changeColor('white')">White</button>
+   <button id="c2" class="menuButt" type="button" onclick="changeColor('beige')">Beige</button>
+   <button id="c3" class="menuButt" type="button" onclick="changeColor('black')">Black</button>
+   <br>
 
-         <br>
+   <label>Font Size:</label>
+   <br>
+   <button id="s1" class="menuButt" type="button" onclick="changeSize('small')">Small</button>
+   <button id="s2" class="menuButt" type="button" onclick="changeSize('medium')">Medium</button>
+   <button id="s3" class="menuButtActive" type="button" onclick="changeSize('large')">Large</button>
 
-         <label>Margin Size:</label>
-         <br>
-         <button id = "m1" class = "menuButt" type="button" onclick="changeMargin('small')">Small</button>
-         <button id = "m2" class = "menuButtActive" type="button" onclick="changeMargin('medium')">Medium</button>
-         <button id = "m3" class = "menuButt" type="button" onclick="changeMargin('large')">Large</button>
+   <br>
 
-         <br>
+   <label>Margin Size:</label>
+   <br>
+   <button id="m1" class="menuButt" type="button" onclick="changeMargin('small')">Small</button>
+   <button id="m2" class="menuButtActive" type="button" onclick="changeMargin('medium')">Medium</button>
+   <button id="m3" class="menuButt" type="button" onclick="changeMargin('large')">Large</button>
 
-         <label>Font Style:</label>
-         <br>
-         <button id = "f1" class = "menuButt" type="button" onclick="changeFont('arial')">Arial</button>
-         <button id = "f2" class = "menuButtActive" type="button" onclick="changeFont('sans')">Times</button>
-         <button id = "f3" class = "menuButt" type="button" onclick="changeFont('mono')">Mono</button>
+   <br>
 
-         <br>
+   <label>Font Style:</label>
+   <br>
+   <button id="f1" class="menuButt" type="button" onclick="changeFont('arial')">Arial</button>
+   <button id="f2" class="menuButtActive" type="button" onclick="changeFont('sans')">Times</button>
+   <button id="f3" class="menuButt" type="button" onclick="changeFont('mono')">Mono</button>
 
-         <label>Alignment:</label>
-         <br>
-         <button id = "a1" class = "menuButtActive" type="button" onclick="changeAlign('left')">Left</button>
-         <button id = "a2" class = "menuButt" type="button" onclick="changeAlign('center')">Center</button>
-         <button id = "a3" class = "menuButt" type="button" onclick="changeAlign('justified')">Justified</button>
+   <br>
 
-         <br>
+   <label>Alignment:</label>
+   <br>
+   <button id="a1" class="menuButtActive" type="button" onclick="changeAlign('left')">Left</button>
+   <button id="a2" class="menuButt" type="button" onclick="changeAlign('center')">Center</button>
+   <button id="a3" class="menuButt" type="button" onclick="changeAlign('justified')">Justified</button>
 
-         <label>Eyetracking Dot:</label>
-         <br>
-         <button id = "d1" class = "menuButtActive" type="button" onclick="changeDot('enable')">Enabled</button>
-         <button id = "d2" class = "menuButt" type="button" onclick="changeDot('disable')">Disabled</button>
-      </div>
+   <br>
 
-      <br>
+   <label>Eyetracking Dot:</label>
+   <br>
+   <button id="d1" class="menuButtActive" type="button" onclick="changeDot('enable')">Enabled</button>
+   <button id="d2" class="menuButt" type="button" onclick="changeDot('disable')">Disabled</button>
+</div>
 
-      <!-- TEXT WINDOW -->
-      <p id="txtSect">Placeholder</p> 
+<br>
 
-      <!-- EPUB WINDOW -->
-      <div id="area" class = "epub">
-      </div>
+<div>
+   <button id="prev" class="nav" onclick="prevPage()">
+      &lt;
+   </button>
+</div>
 
-      {% block content %}
-      {% if fileType == "epub" %}
-      <script>
-         //EPUB Loader
-         var book = ePub("/uploads/upload.epub", { openAs: "epub" });
-         var rendition = book.renderTo("area", {
-            flow: "scroll"
-         });
-         var displayed = rendition.display();
-      </script>
-      {% else %}
-      <script>
-         // TXT Loader
-         document.getElementById("txtSect").style.display = "block";
-         fetch('/upload/txt')
-            .then(response => response.text())
-            .then(text => document.getElementById("txtSect").innerHTML = text)
-      </script>
-      {% endif %}
-      {% endblock content %}
+<!-- TEXT WINDOW -->
+<p id="txtSect">Placeholder</p>
 
-   </div>
+<!-- EPUB WINDOW -->
+<div id="area" class="epub"></div>
+
+<div>
+   <button id="next" class="nav" onclick="nextPage()">
+      &gt;
+   </button>
+</div>
+
+
+
+{% block content %}
+{% if fileType == "epub" %}
+<script>
+   //EPUB Loader
+   document.getElementById("area").style.display = "block"
+   let divWid = document.getElementById("area").offsetWidth * 0.98;
+   var book = ePub("/uploads/upload.epub", { openAs: "epub" });
+   var rendition = book.renderTo("area", {
+      width: divWid.toString(),
+      flow: "scrolled-doc",
+   });
+   var displayed = rendition.display();
+   function nextPage() {
+      rendition.next();
+   }
+
+   function prevPage() {
+      rendition.prev();
+   }
+</script>
+{% else %}
+<script>
+   // TXT Loader
+   document.getElementById("txtSect").style.display = "block";
+   fetch('/upload/txt')
+      .then(response => response.text())
+      .then(text => document.getElementById("txtSect").innerHTML = text)
+</script>
+{% endif %}
+{% endblock content %}
+
+<script>
+</script>
+
 </html>

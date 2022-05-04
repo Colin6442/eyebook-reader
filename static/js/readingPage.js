@@ -36,6 +36,7 @@ var eyeListener = async function(data, clock) {
     }
     
 }
+
 function popMenu() {
     // Initial click functionality
     if (document.getElementById("popMenu").style.display == "block") {
