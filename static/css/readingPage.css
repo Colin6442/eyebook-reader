@@ -8,37 +8,36 @@ p {
     font-size: x-large;
     overflow:scroll;
     overflow-x: hidden;
-    height: 1000px;
-    margin: 5%;
+    /* height: 1000px; */
+    margin-left: 5%;
+    margin-right: 5%;
     border: 2px;
     padding: 5%;
     border-style: solid;
     background-color: white;
 }
+
 .navLeft{
-    height: 70vh;
-    width: 4vh;
+    height: 100%;
     display: inline-block;
-    position: absolute;
-    top: 10vh;
-    left: 0;
     background-color: royalblue;
     border: none;
     border-radius: 10px;
     color: white;
+    margin-left: 2px;
+    width: 5vh;
 }
+
 .navRight{
-    height: 70vh;
-    width: 4vh;
-    display: inline-block;
-    position: absolute;
-    top: 10vh;
-    right: 0;
+    height: 100%;
     background-color: royalblue;
     border: none;
     border-radius: 10px;
     color: white;
+    margin-right: 2px;
+    width: 5vh;
 }
+
 .epub{
     display: none;
     overflow: auto;
@@ -46,14 +45,16 @@ p {
     line-height: 0;
     vertical-align: top;
     align-items: center;
-    /* position: absolute; */
     direction: ltr;
-    height: 70vh;
-    margin: 5%;
+    height: 90vh;
+    margin-left: 2%;
+    margin-right: 2%;
     border: 2px;
     border-style: solid;
     background-color: white;
+    flex-grow: 1;
 }
+
 .back{
     background-color: royalblue;
     border: none;

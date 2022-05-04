@@ -70,7 +70,7 @@ function changeColor(color) {
 function changeSize(size) {
     resetClass("size");
     if (size == "small") {
-        document.getElementById("txtSect").style.fontSize = "15px";
+        document.getElementById("txtSect").style.fontSize = "x-large";
         changeClass("s1");
     }else if (size == "medium") {
         document.getElementById("txtSect").style.fontSize = "30px";

@@ -30,9 +30,9 @@
 
    <label>Font Size:</label>
    <br>
-   <button id="s1" class="menuButt" type="button" onclick="changeSize('small')">Small</button>
+   <button id="s1" class="menuButtActive" type="button" onclick="changeSize('small')">Small</button>
    <button id="s2" class="menuButt" type="button" onclick="changeSize('medium')">Medium</button>
-   <button id="s3" class="menuButtActive" type="button" onclick="changeSize('large')">Large</button>
+   <button id="s3" class="menuButt" type="button" onclick="changeSize('large')">Large</button>
 
    <br>
 
@@ -67,25 +67,24 @@
 </div>
 
 <br>
-<div>
 
-<div>
-   <button id="prev" class="navLeft" onclick="prevPage()">
-      &lt;
-   </button>
-</div>
+<div style="display: flex;">
 
-<!-- TEXT WINDOW -->
-<p id="txtSect">Placeholder</p>
+   <div style="float: left">
+      <button id="prev" class="navLeft" onclick="prevPage()">Prev</button>
+   </div>
 
-<!-- EPUB WINDOW -->
-<div id="area" class="epub"></div>
+   <!-- TEXT WINDOW -->
+   <p id="txtSect">Placeholder</p>
 
-<div>
-   <button id="next" class="navRight" onclick="nextPage()">
-      &gt;
-   </button>
-</div>
+   <!-- EPUB WINDOW -->
+   <div id="area" class="epub" style="float: left"></div>
+
+   <div style="float: left">
+      <button id="next" class="navRight" onclick="nextPage()">
+         Next
+      </button>
+   </div>
 
 </div>
 
@@ -119,8 +118,5 @@
 </script>
 {% endif %}
 {% endblock content %}
-
-<script>
-</script>
 
 </html>
