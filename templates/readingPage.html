@@ -67,9 +67,10 @@
 </div>
 
 <br>
+<div>
 
 <div>
-   <button id="prev" class="nav" onclick="prevPage()">
+   <button id="prev" class="navLeft" onclick="prevPage()">
       &lt;
    </button>
 </div>
@@ -81,12 +82,12 @@
 <div id="area" class="epub"></div>
 
 <div>
-   <button id="next" class="nav" onclick="nextPage()">
+   <button id="next" class="navRight" onclick="nextPage()">
       &gt;
    </button>
 </div>
 
-
+</div>
 
 {% block content %}
 {% if fileType == "epub" %}
