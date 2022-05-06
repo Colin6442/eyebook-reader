@@ -4,9 +4,12 @@
 
 <head>
    <title>EyeBook Reading Page</title>
-   <script src="https://d3js.org/d3.v3.min.js"></script> <!-- Eyetracking Stuff -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script> <!-- Camera Stuff -->
-   <script src="../static/js/webgazer.js"></script> <!-- Eyetracking Stuff -->
+   <!-- Eyetracking Stuff -->
+   <script src="https://d3js.org/d3.v3.min.js"></script>
+   <!-- Camera Stuff -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script>
+   <!-- JavaScript & CSS -->
+   <script src="../static/js/webgazer.js"></script>
    <script src="../static/js/readingPage.js"></script>
    <link rel="stylesheet" type="text/css" href="../static/css/readingPage.css">
 
@@ -16,6 +19,7 @@
 
 </head>
 <script>
+   // This script initializes the webgazer library to start tracking user's eye positions
    var webgazerInstance;
    window.onload = async function () {
       webgazerInstance = await webgazer.setRegression('weightedRidge') /* currently must set regression and tracker */
@@ -33,10 +37,11 @@
    window.onbeforeunload = function () {
       webgazer.end();
    }
-
+   // after library is initialized, we start tracking and comparing user eye position to screen values and enact behaviors depending on them
    var webgazerCanvas = null;
    var pos = 0;
    var globalTime = new Date().getTime();
+   //the function that is rapidly called to check user positions
    var eyeListener = async function (data, clock) {
       //do scrolling things
       if (!data)
@@ -44,7 +49,9 @@
       if (!webgazerCanvas) {
          webgazerCanvas = webgazer.getVideoElementCanvas();
       }
+      //defaults to the text view but automatically adjusts when an epub is used.
       var textContainer = document.getElementById('txtSect');
+      //epub behaviors, which adds the ability for users to navigate pages with eye movement
       if (document.getElementById("popMenuButt").style.display == "none") {
          textContainer = document.getElementById('area');
          var timeCheck = new Date().getTime();
@@ -57,9 +64,9 @@
                nextPage();
                globalTime = new Date().getTime();
             }
-            // globalTime = new Date().getTime();
          }
       }
+      //scrolling behavior, applies to both depending on the automatically selected textContainer
       if (data.y < screen.height * .1) {
          textContainer.scrollTop -= 10;
       }
@@ -73,6 +80,7 @@
    <button class="back" type=submit>Back</button>
 </form>
 <button class="popMenuButt" type="button" id="popMenuButt" onclick="popMenu()">Menu</button>
+<!-- Pop Up Menu Div -->
 <div class="popMenu" id="popMenu" hidden="hidden">
    <label>Color:</label>
    <br>
@@ -120,7 +128,7 @@
 </div>
 
 <br>
-
+<!-- Main Viewing Div -->
 <div style="display: flex; height: 100%">
 
    <div style="float: left">
@@ -128,7 +136,7 @@
    </div>
 
    <!-- TEXT WINDOW -->
-   <div >
+   <div>
       <p id="txtSect">Placeholder</p>
    </div>
 
