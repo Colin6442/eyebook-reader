@@ -1,13 +1,17 @@
 import os
 
 from flask import render_template, redirect, request, url_for, Flask, flash, send_from_directory
+from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 
 UpFolder = './uploads/'
 
 app = Flask(__name__)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+# app.config['SQLALCHMEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = UpFolder
 app.secret_key = 'keep secret'  # placeholder
+# db = SQLAlchemy(app)
 
 def clearUploads():
     try:
