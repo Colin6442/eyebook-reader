@@ -1,7 +1,7 @@
 import os
 
 from flask import render_template, redirect, request, url_for, Flask, flash, send_from_directory
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 
 UpFolder = './uploads/'
