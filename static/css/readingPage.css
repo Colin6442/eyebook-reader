@@ -115,7 +115,7 @@ p {
     position: absolute;
     right:0;
     width: 23%;
-    height: 40%;
+    /* height: 40%; */
     padding: 10px;
 }
 

@@ -5,9 +5,9 @@
     <title>EyeBook Calibration Page</title>
     <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- Eyetracking Stuff -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script>  <!-- Camera Stuff -->
-    <script src="../static/js/webgazer.js"></script>     <!-- Eyetracking Stuff -->
-    <script src="../static/js/calibrationPage.js"></script>
-    <link rel="stylesheet" type="text/css" href="../static/css/calibrationPage.css">
+    <script src="{{ url_for('static',filename='js/webgazer.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/calibrationPage.js') }}"></script>
+    <link rel="stylesheet"  type= "text/css" href= "{{ url_for('static',filename='css/calibrationPage.css') }}">
   </head>
   <body>
     <div id="menu", class="menu">
@@ -33,7 +33,7 @@
       <div class="allMenuBtns">
         <button id="checkBtn", class="menuBtn" onclick="checkCalibration()">Check</button>
         <button id="calBtn", class="menuBtn" onclick="beginCalibration()">Start Calibration</button>
-        <button id="contBtn", class="menuBtn" onclick="finishCalibration()">Continue</button>
+        <button id="contBtn", class="menuBtn" onclick="noChanges()">Continue</button>
         <button id="resetBtn", class="menuBtn" onclick="resetCalibration()">Reset</button>
       </div>
     </div>
