@@ -36,6 +36,7 @@
 
    var webgazerCanvas = null;
    var pos = 0;
+   var globalTime = new Date().getTime();
    var eyeListener = async function (data, clock) {
       //do scrolling things
       if (!data)
@@ -46,11 +47,17 @@
       var textContainer = document.getElementById('txtSect');
       if (document.getElementById("popMenuButt").style.display == "none") {
          textContainer = document.getElementById('area');
-         if (data.x < screen.width * .1) {
-            prevPage();
-         }
-         if (data.x > screen.width * .8) {
-            nextPage();
+         var timeCheck = new Date().getTime();
+         if (timeCheck - globalTime > 1000) {
+            if (data.x < screen.width * .1) {
+               prevPage();
+               globalTime = new Date().getTime();
+            }
+            if (data.x > screen.width * .8) {
+               nextPage();
+               globalTime = new Date().getTime();
+            }
+            // globalTime = new Date().getTime();
          }
       }
       if (data.y < screen.height * .1) {
