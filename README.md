@@ -9,4 +9,7 @@
 ## 6) Navigate to the directory where the unzipped contents are
 ## 7) Type *python main.py*
 ## 8) Type the *htpp://* address into your browser of choice. Works best on Google Chrome
-## 9)TEsT
+## 9) Import a chosen .txt or .epub file. Two example files are provided
+## 10) Follow the calibration instructions for eye tracking to work
+## 11a) If a .txt file was uploaded, please use your MOUSE to change the settings to what is most comfortable for you to use. Look up to scroll up on the text file, and look down to scroll down
+## 11b) If a .epub file was uploaded, enjoy reading; currently the settings only work well with .txt files. Look at the *Prev* and *Next* buttons to navigate pages and look up to scroll up on the text file, and look down to scroll down
