@@ -1,44 +1,3 @@
-var webgazerInstance;
-window.onload = async function() {
-    webgazerInstance = await webgazer.setRegression('weightedRidge') /* currently must set regression and tracker */
-        .setTracker('TFFacemesh')
-        .begin();
-    webgazerInstance.showVideoPreview(false) /* shows all video previews */
-        .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
-        .applyKalmanFilter(true); // Kalman Filter defaults to on.
-        
-    webgazer.removeOnlyMouseMoveListeners();
-    webgazer.setGazeListener(eyeListener);
-
-};
-
-window.onbeforeunload = function() {
-	webgazer.end();
-}
-
-var webgazerCanvas = null;
-var pos = 0;
-var eyeListener = async function(data, clock) {
-  //do scrolling things
-  if(!data)
-        return;
-    if (!webgazerCanvas) {
-        webgazerCanvas = webgazer.getVideoElementCanvas();
-    }
-    var textContainer = document.getElementById('txtSect');
-    if(document.getElementById("popMenuButt").style.display == "none"){
-        textContainer = document.getElementById('area');
-    }
-    if(data.y < screen.height*.1){
-        textContainer.scrollTop -= 10;
-    }
-    
-    if(data.y > screen.height*.7){
-        textContainer.scrollTop += 10;
-    }
-    
-}
-
 function popMenu() {
     // Initial click functionality
     if (document.getElementById("popMenu").style.display == "block") {
@@ -165,3 +124,4 @@ function resetClass(section){
 function changeClass(id){
     document.getElementById(id).className = "menuButtActive"
 }
+
