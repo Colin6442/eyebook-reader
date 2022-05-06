@@ -1,3 +1,4 @@
+// Function that shows/hides the menu with viewing controls when displaying a text file
 function popMenu() {
     // Initial click functionality
     if (document.getElementById("popMenu").style.display == "block") {
@@ -11,6 +12,7 @@ function popMenu() {
     }
 
 }
+//function that allows the user to change the background of the viewer between three different colors
 function changeColor(color) {
     resetClass("color");
     if (color == "white") {
@@ -18,7 +20,7 @@ function changeColor(color) {
         document.getElementById("txtSect").style.color = "black";
         changeClass("c1");
     }else if (color == "beige") {
-        document.getElementById("txtSect").style.backgroundColor = "beige";
+        document.getElementById("txtSect").style.backgroundColor = "rgb(252,238,212) ";
         document.getElementById("txtSect").style.color = "black";
         changeClass("c2");
     }else{
@@ -27,7 +29,7 @@ function changeColor(color) {
         changeClass("c3");
     }
 }
-
+//function that allows the user to change the size of the text
 function changeSize(size) {
     resetClass("size");
     if (size == "small") {
@@ -41,7 +43,7 @@ function changeSize(size) {
         changeClass("s3");
     }
 }
-
+//function that allows user to change the size of the margins around the text
 function changeMargin(size) {
     resetClass("margin");
     if (size == "small") {
@@ -55,7 +57,7 @@ function changeMargin(size) {
         changeClass("m3");
     }
 }
-
+//function that allows user to change the font of the text
 function changeFont(font) {
     resetClass("font")
     if (font == "arial") {
@@ -69,7 +71,7 @@ function changeFont(font) {
         changeClass("f3");
     }
 }
-
+//function that allows the user to disable the eyetracking dot
 function changeDot(dot){
     resetClass("dot")
     if (dot == "enable"){
@@ -80,7 +82,7 @@ function changeDot(dot){
         changeClass("d2");
     }
 }
-
+//function that allows the user to change the text alignment of the viewed text
 function changeAlign(align) {
     resetClass("align")
     if (align == "left") {
@@ -94,7 +96,7 @@ function changeAlign(align) {
         changeClass("a3");
     }
 }
-
+//function that resets buttons back to an "inactive" state before being marked as active again
 function resetClass(section){
     if (section == "color"){
         document.getElementById("c1").className = "menuButt"
@@ -121,6 +123,7 @@ function resetClass(section){
         document.getElementById("d2").className = "menuButt"
     }
 }
+// function that marks a button as active. 
 function changeClass(id){
     document.getElementById(id).className = "menuButtActive"
 }
