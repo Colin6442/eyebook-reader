@@ -9,9 +9,9 @@
    <!-- Camera Stuff -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script>
    <!-- JavaScript & CSS -->
-   <script src="../static/js/webgazer.js"></script>
-   <script src="../static/js/readingPage.js"></script>
-   <link rel="stylesheet" type="text/css" href="../static/css/readingPage.css">
+   <script src="{{ url_for('static',filename='js/webgazer.js') }}"></script>
+   <script src="{{ url_for('static',filename='js/readingPage.js') }}"></script>
+   <link rel="stylesheet"  type= "text/css" href= "{{ url_for('static',filename='css/readingPage.css') }}">
 
    <!-- Epub Reader -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.0/jszip.min.js"></script>
