@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../static/css/startPage.css">
+    <link rel="stylesheet" href="../static/css/startPage.css"> <!-- creating a link between the HTML and CSS File allowing for cleaner code  -->
     <title>EyeReader</title>
    
 </head>
@@ -12,23 +12,24 @@
 <h1> Welcome to Lazy Eye<sup>TM</sup></h1>
 <!-- action="{{ url_for('calibration')}}" -->
 <!-- enctype=multipart/form-data -->
+<!-- Form used for submitting the selected file. Since we uploading the entire itself, instead of an address to it, we use "multipart/form-data" -->
 <form action="{{ url_for('calibration')}}" method="POST" enctype=multipart/form-data>
     <span id="custom-text">No txt chosen, yet</span>
     <br>
-    <input type="file" id="real-button"  accept=".txt, .epub" name = "file" hidden="hidden" onchange="uploadReady()">
-    <button type="button" id="custom-button">Import EPUB/TXT</button>
-    <button type=submit id="confirm-button" >Next</button>
+    <input type="file" id="real-button"  accept=".txt, .epub" name = "file" hidden="hidden" onchange="uploadReady()">  <!-- creating the actual file button which accepts the files -->
+    <button type="button" id="custom-button">Import EPUB/TXT</button>   <!-- Cutsomizes the file button to give it a better look using css -->
+    <button type=submit id="confirm-button" >Next</button>  <!-- creating and customizes the next button which allows you to coutinue the program  -->
     
 </form>
 <script>
     function uploadReady(){
-		document.getElementById("confirm-button").style.backgroundColor = "darkgreen";
+		document.getElementById("confirm-button").style.backgroundColor = "darkgreen"; // customizes the next button to turn green once file is chosen
     }
 </script>
 
-<script type="text/javascript">
-    
-    const realBtn = document.getElementById("real-button")
+<script type="text/javascript"> // This script is getting the values of the buttons and telling the program what to do when the button is clicked.
+                                // As well as showing what file you have uploaded
+    const realBtn = document.getElementById("real-button")  
     const customBtn = document.getElementById("custom-button");
     const customTxt = document.getElementById("custom-text");
 
