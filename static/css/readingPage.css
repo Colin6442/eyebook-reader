@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    background-color: lightpink;
+}
+
+p {
+    display: none;
+    font-size: x-large;
+    overflow:scroll;
+    overflow-x: hidden;
+    height: 80vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 2px;
+    padding: 5%;
+    border-style: solid;
+    background-color: white;
+}
+
+.navLeft{
+    height: 100%;
+    display: inline-block;
+    background-color: royalblue;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-left: 2px;
+    width: 5vh;
+}
+
+.navRight{
+    height: 100%;
+    background-color: royalblue;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-right: 2px;
+    width: 5vh;
+}
+
+.epub{
+    display: none;
+    overflow: auto;
+    word-spacing: 0px;
+    line-height: 0;
+    vertical-align: top;
+    align-items: center;
+    direction: ltr;
+    height: 90vh;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 2px;
+    border-style: solid;
+    background-color: white;
+    flex-grow: 1;
+}
+
+.back{
+    background-color: royalblue;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 4px;
+    margin-left: 2px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 black;
+    transition: ease-out 0.3s;
+}
+
+.back:hover{
+    box-shadow: inset 300px 0 0 0 white;
+    color: black;
+}
+
+.popMenuButt{
+    background-color: royalblue;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 4px;
+    margin-right: 2px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 black;
+    transition: ease-out 0.3s;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.popMenuButt:hover{
+    box-shadow: inset 300px 0 0 0 white;
+    color: black;
+}
+
+.popMenu{
+    display: hidden;
+    background-color: royalblue;
+    border: none;
+    border-radius: 10px;
+    border-top-right-radius: 0%;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    margin-right: 2px;
+    cursor: pointer;
+    position: absolute;
+    right:0;
+    width: 23%;
+    height: 40%;
+    padding: 10px;
+}
+
+label{
+    background-color: royalblue;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 black;
+    transition: ease-out 0.3s;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.menuButt{
+    background-color: royalblue;
+    border: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 black;
+    transition: ease-out 0.3s;
+    width: 32%;
+}
+.menuButtActive{
+    background-color: white;
+    border: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 10px;
+    color: royalblue;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 black;
+    transition: ease-out 0.3s;
+    width: 32%;
+}
+
+a:hover {
+    box-shadow: inset 300px 0 0 0 white;
+    color: black;
+}
