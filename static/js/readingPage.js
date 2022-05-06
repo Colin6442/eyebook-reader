@@ -1,167 +1,130 @@
-var webgazerInstance;
-window.onload = async function() {
-    webgazerInstance = await webgazer.setRegression('weightedRidge') /* currently must set regression and tracker */
-        .setTracker('TFFacemesh')
-        .begin();
-    webgazerInstance.showVideoPreview(false) /* shows all video previews */
-        .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
-        .applyKalmanFilter(true); // Kalman Filter defaults to on.
-        
-    webgazer.removeOnlyMouseMoveListeners();
-    webgazer.setGazeListener(eyeListener);
-
-};
-
-window.onbeforeunload = function() {
-	webgazer.end();
-}
-
-var webgazerCanvas = null;
-var pos = 0;
-var eyeListener = async function(data, clock) {
-  //do scrolling things
-  if(!data)
-        return;
-    if (!webgazerCanvas) {
-        webgazerCanvas = webgazer.getVideoElementCanvas();
-    }
-    var textContainer = document.getElementById('txtSect');
-    if(document.getElementById("popMenuButt").style.display == "none"){
-        textContainer = document.getElementById('area');
-    }
-    if(data.y < screen.height*.1){
-        textContainer.scrollTop -= 10;
-    }
-    
-    if(data.y > screen.height*.7){
-        textContainer.scrollTop += 10;
-    }
-    
-}
-
+// Function that shows/hides the menu with viewing controls when displaying a text file
 function popMenu() {
     // Initial click functionality
     if (document.getElementById("popMenu").style.display == "block") {
         document.getElementById("popMenu").style.display = "none";
         document.getElementById("popMenuButt").style.borderBottomLeftRadius = "10px";
         document.getElementById("popMenuButt").style.borderBottomRightRadius = "10px";
-    }else{
+    } else {
         document.getElementById("popMenu").style.display = "block";
         document.getElementById("popMenuButt").style.borderBottomLeftRadius = "0px";
         document.getElementById("popMenuButt").style.borderBottomRightRadius = "0px";
     }
 
 }
+//function that allows the user to change the background of the viewer between three different colors
 function changeColor(color) {
     resetClass("color");
     if (color == "white") {
         document.getElementById("txtSect").style.backgroundColor = "white";
         document.getElementById("txtSect").style.color = "black";
         changeClass("c1");
-    }else if (color == "beige") {
-        document.getElementById("txtSect").style.backgroundColor = "beige";
+    } else if (color == "beige") {
+        document.getElementById("txtSect").style.backgroundColor = "rgb(252,238,212) ";
         document.getElementById("txtSect").style.color = "black";
         changeClass("c2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.backgroundColor = "black";
         document.getElementById("txtSect").style.color = "white";
         changeClass("c3");
     }
 }
-
+//function that allows the user to change the size of the text
 function changeSize(size) {
     resetClass("size");
     if (size == "small") {
         document.getElementById("txtSect").style.fontSize = "x-large";
         changeClass("s1");
-    }else if (size == "medium") {
+    } else if (size == "medium") {
         document.getElementById("txtSect").style.fontSize = "30px";
         changeClass("s2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.fontSize = "45px";
         changeClass("s3");
     }
 }
-
+//function that allows user to change the size of the margins around the text
 function changeMargin(size) {
     resetClass("margin");
     if (size == "small") {
         document.getElementById("txtSect").style.padding = "2%";
         changeClass("m1");
-    }else if (size == "medium") {
+    } else if (size == "medium") {
         document.getElementById("txtSect").style.padding = "5%";
         changeClass("m2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.padding = "10%";
         changeClass("m3");
     }
 }
-
+//function that allows user to change the font of the text
 function changeFont(font) {
     resetClass("font")
     if (font == "arial") {
         document.getElementById("txtSect").style.fontFamily = "Arial,Helvetica,sans-serif";
         changeClass("f1");
-    }else if (font == "sans") {
+    } else if (font == "sans") {
         document.getElementById("txtSect").style.fontFamily = " Times, 'Times New Roman', Georgia, serif";
         changeClass("f2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.fontFamily = "'Lucida Console', Courier, monospace";
         changeClass("f3");
     }
 }
-
-function changeDot(dot){
+//function that allows the user to disable the eyetracking dot
+function changeDot(dot) {
     resetClass("dot")
-    if (dot == "enable"){
+    if (dot == "enable") {
         webgazerInstance.showPredictionPoints(true);
         changeClass("d1");
-    }else{
+    } else {
         webgazerInstance.showPredictionPoints(false);
         changeClass("d2");
     }
 }
-
+//function that allows the user to change the text alignment of the viewed text
 function changeAlign(align) {
     resetClass("align")
     if (align == "left") {
         document.getElementById("txtSect").style.textAlign = "Left";
         changeClass("a1");
-    }else if (align == "center") {
+    } else if (align == "center") {
         document.getElementById("txtSect").style.textAlign = "Center";
         changeClass("a2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.textAlign = "Justify";
         changeClass("a3");
     }
 }
-
-function resetClass(section){
-    if (section == "color"){
+//function that resets buttons back to an "inactive" state before being marked as active again
+function resetClass(section) {
+    if (section == "color") {
         document.getElementById("c1").className = "menuButt"
         document.getElementById("c2").className = "menuButt"
         document.getElementById("c3").className = "menuButt"
-    }else if(section == "size"){
+    } else if (section == "size") {
         document.getElementById("s1").className = "menuButt"
         document.getElementById("s2").className = "menuButt"
         document.getElementById("s3").className = "menuButt"
-    }else if(section == "margin"){
+    } else if (section == "margin") {
         document.getElementById("m1").className = "menuButt"
         document.getElementById("m2").className = "menuButt"
         document.getElementById("m3").className = "menuButt"
-    }else if(section == "font"){
+    } else if (section == "font") {
         document.getElementById("f1").className = "menuButt"
         document.getElementById("f2").className = "menuButt"
         document.getElementById("f3").className = "menuButt"
-    }else if(section == "align"){
+    } else if (section == "align") {
         document.getElementById("a1").className = "menuButt"
         document.getElementById("a2").className = "menuButt"
         document.getElementById("a3").className = "menuButt"
-    }else{
+    } else {
         document.getElementById("d1").className = "menuButt"
         document.getElementById("d2").className = "menuButt"
     }
 }
-function changeClass(id){
+// function that marks a button as active. 
+function changeClass(id) {
     document.getElementById(id).className = "menuButtActive"
 }
+
