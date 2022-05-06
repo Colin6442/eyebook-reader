@@ -5,7 +5,7 @@ function popMenu() {
         document.getElementById("popMenu").style.display = "none";
         document.getElementById("popMenuButt").style.borderBottomLeftRadius = "10px";
         document.getElementById("popMenuButt").style.borderBottomRightRadius = "10px";
-    }else{
+    } else {
         document.getElementById("popMenu").style.display = "block";
         document.getElementById("popMenuButt").style.borderBottomLeftRadius = "0px";
         document.getElementById("popMenuButt").style.borderBottomRightRadius = "0px";
@@ -19,11 +19,11 @@ function changeColor(color) {
         document.getElementById("txtSect").style.backgroundColor = "white";
         document.getElementById("txtSect").style.color = "black";
         changeClass("c1");
-    }else if (color == "beige") {
+    } else if (color == "beige") {
         document.getElementById("txtSect").style.backgroundColor = "rgb(252,238,212) ";
         document.getElementById("txtSect").style.color = "black";
         changeClass("c2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.backgroundColor = "black";
         document.getElementById("txtSect").style.color = "white";
         changeClass("c3");
@@ -35,10 +35,10 @@ function changeSize(size) {
     if (size == "small") {
         document.getElementById("txtSect").style.fontSize = "x-large";
         changeClass("s1");
-    }else if (size == "medium") {
+    } else if (size == "medium") {
         document.getElementById("txtSect").style.fontSize = "30px";
         changeClass("s2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.fontSize = "45px";
         changeClass("s3");
     }
@@ -49,10 +49,10 @@ function changeMargin(size) {
     if (size == "small") {
         document.getElementById("txtSect").style.padding = "2%";
         changeClass("m1");
-    }else if (size == "medium") {
+    } else if (size == "medium") {
         document.getElementById("txtSect").style.padding = "5%";
         changeClass("m2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.padding = "10%";
         changeClass("m3");
     }
@@ -63,21 +63,21 @@ function changeFont(font) {
     if (font == "arial") {
         document.getElementById("txtSect").style.fontFamily = "Arial,Helvetica,sans-serif";
         changeClass("f1");
-    }else if (font == "sans") {
+    } else if (font == "sans") {
         document.getElementById("txtSect").style.fontFamily = " Times, 'Times New Roman', Georgia, serif";
         changeClass("f2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.fontFamily = "'Lucida Console', Courier, monospace";
         changeClass("f3");
     }
 }
 //function that allows the user to disable the eyetracking dot
-function changeDot(dot){
+function changeDot(dot) {
     resetClass("dot")
-    if (dot == "enable"){
+    if (dot == "enable") {
         webgazerInstance.showPredictionPoints(true);
         changeClass("d1");
-    }else{
+    } else {
         webgazerInstance.showPredictionPoints(false);
         changeClass("d2");
     }
@@ -88,43 +88,43 @@ function changeAlign(align) {
     if (align == "left") {
         document.getElementById("txtSect").style.textAlign = "Left";
         changeClass("a1");
-    }else if (align == "center") {
+    } else if (align == "center") {
         document.getElementById("txtSect").style.textAlign = "Center";
         changeClass("a2");
-    }else{
+    } else {
         document.getElementById("txtSect").style.textAlign = "Justify";
         changeClass("a3");
     }
 }
 //function that resets buttons back to an "inactive" state before being marked as active again
-function resetClass(section){
-    if (section == "color"){
+function resetClass(section) {
+    if (section == "color") {
         document.getElementById("c1").className = "menuButt"
         document.getElementById("c2").className = "menuButt"
         document.getElementById("c3").className = "menuButt"
-    }else if(section == "size"){
+    } else if (section == "size") {
         document.getElementById("s1").className = "menuButt"
         document.getElementById("s2").className = "menuButt"
         document.getElementById("s3").className = "menuButt"
-    }else if(section == "margin"){
+    } else if (section == "margin") {
         document.getElementById("m1").className = "menuButt"
         document.getElementById("m2").className = "menuButt"
         document.getElementById("m3").className = "menuButt"
-    }else if(section == "font"){
+    } else if (section == "font") {
         document.getElementById("f1").className = "menuButt"
         document.getElementById("f2").className = "menuButt"
         document.getElementById("f3").className = "menuButt"
-    }else if(section == "align"){
+    } else if (section == "align") {
         document.getElementById("a1").className = "menuButt"
         document.getElementById("a2").className = "menuButt"
         document.getElementById("a3").className = "menuButt"
-    }else{
+    } else {
         document.getElementById("d1").className = "menuButt"
         document.getElementById("d2").className = "menuButt"
     }
 }
 // function that marks a button as active. 
-function changeClass(id){
+function changeClass(id) {
     document.getElementById(id).className = "menuButtActive"
 }
 
