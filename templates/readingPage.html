@@ -22,15 +22,15 @@
    // This script initializes the webgazer library to start tracking user's eye positions
    var webgazerInstance;
    window.onload = async function () {
-      webgazerInstance = await webgazer.setRegression('weightedRidge') /* currently must set regression and tracker */
+      webgazerInstance = await webgazer.setRegression('weightedRidge') // Set to wieghted to use running average
          .setTracker('TFFacemesh')
          .begin();
-      webgazerInstance.showVideoPreview(false) /* shows all video previews */
-         .showPredictionPoints(true) /* shows a square every 100 milliseconds where current prediction is */
-         .applyKalmanFilter(true); // Kalman Filter defaults to on.
-
-      webgazer.removeOnlyMouseMoveListeners();
-      webgazer.setGazeListener(eyeListener);
+      webgazerInstance.showVideoPreview(false) // true: display video in top left corner
+         .showPredictionPoints(true) // shows a circle every 100 milliseconds where current prediction is
+         .applyKalmanFilter(true); // Using Kalman Filter
+         
+      webgazer.removeMouseEventListeners(); // Clicks and mouse movement will not impact tracking
+      webgazer.setGazeListener(eyeListener); // Send data to eyeListener function
 
    };
 
