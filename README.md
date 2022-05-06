@@ -13,3 +13,6 @@
 ###### 10) Follow the calibration instructions for eye tracking to work
 ###### 11a) If a .txt file was uploaded, please use your MOUSE to change the settings to what is most comfortable for you to use. Look up to scroll up on the text file, and look down to scroll down
 ###### 11b) If a .epub file was uploaded, enjoy reading; currently the view settings only work with .txt files. Look at the *Prev* and *Next* buttons to navigate pages and look up to scroll up on the text file, and look down to scroll down
+# If you were unable to get the site running properly:
+###### - Contact us by email, or Ahmad Suleiman by phone (5592230722)
+###### - View this demo video that we uploaded as back up, that demonstrates how the website is supposed to function: [LazyEye Demo](https://drive.google.com/file/d/18yYhRDdeVnSykRvb-ykvrTVil9zUaRDr/view?usp=sharing)
